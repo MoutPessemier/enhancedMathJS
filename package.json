@@ -4,7 +4,7 @@
   "description": "This package contains some enhanced mathematical operations",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "js",
