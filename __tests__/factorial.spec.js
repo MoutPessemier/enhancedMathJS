@@ -15,4 +15,9 @@ describe("Factorial", () => {
     const f = factorial(5);
     expect(f).toBe(120);
   });
+
+  test("should return -1 for negative values", () => {
+    const f = factorial(-10);
+    expect(f).toBe(-1);
+  });
 });
