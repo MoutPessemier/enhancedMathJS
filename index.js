@@ -12,4 +12,4 @@ const EM = {
   intersectionPoints: intersection_points,
 };
 
-export default EM;
+module.exports = EM;
