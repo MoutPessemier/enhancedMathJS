@@ -1,0 +1,6 @@
+src/
+.editorconfig
+.prettierrc
+jest.config.js
+junit.xml
+tsconfig.json

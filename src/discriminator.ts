@@ -5,7 +5,7 @@
  * @param {number} c The constant
  * @returns {number} The discriminator
  */
-const discriminator = (a, b, c) => {
+const discriminator = (a: number, b: number, c: number) => {
   return Math.pow(b, 2) - 4 * a * c;
 };
 
@@ -16,11 +16,11 @@ const discriminator = (a, b, c) => {
  * @param {number} c The constant
  * @returns {[]} The intersection points
  */
-const intersection_points = (a, b, c) => {
+export const intersection_points = (a: number, b: number, c: number) => {
   const D = discriminator(a, b, c);
   if (D < 0) return [];
   if (D === 0) return [-b / (2 * a)];
   return [(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)];
 };
 
-module.exports = { discriminator, intersection_points };
+export default discriminator;

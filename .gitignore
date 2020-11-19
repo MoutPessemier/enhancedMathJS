@@ -1,8 +1,11 @@
 # Dependency directories
 node_modules/
 coverage/
+lib/
 
 # System Files
 .DS_Store
 Thumbs.db
 
+# Output Files
+junit.xml

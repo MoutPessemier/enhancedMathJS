@@ -1,4 +1,4 @@
-const factorial = require("../factorial");
+import factorial from '../factorial';
 
 // TODO: above a certain threshold, it's not accurate anymore --> find a way to make it accurate
 /**
@@ -7,8 +7,8 @@ const factorial = require("../factorial");
  * @param {number} r The sample size
  * @returns {number} The amount of possible combinations
  */
-const combination = (n, r) => {
+const combination = (n: number, r: number): number => {
   return factorial(n) / (factorial(r) * factorial(n - r));
 };
 
-module.exports = combination;
+export default combination;
