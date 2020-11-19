@@ -1,6 +1,6 @@
 {
   "name": "enhancedmath",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "This package contains some enhanced mathematical operations",
   "main": "index.js",
   "scripts": {
