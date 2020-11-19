@@ -20,5 +20,6 @@ Mout Pessemier:
 ### Contributors
 
 - [reeveng](https://github.com/reeveng)
+- [Jef Malfliet](https://github.com/Jef-Malfliet)
 
 Copyright 2020 &copy; by Mout Pessemier
