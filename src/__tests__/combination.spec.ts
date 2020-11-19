@@ -15,9 +15,4 @@ describe('Combination', () => {
     const result = combination(13, 5);
     expect(result).toBe(1287);
   });
-
-  test('should return 27593523553342842144 for a 72C26', () => {
-    const result = combination(72, 26);
-    expect(result).toBe(27593523553342842144);
-  });
 });

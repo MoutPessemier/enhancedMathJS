@@ -3,6 +3,7 @@ import fibonacci from './fibonacci';
 import discriminator, { intersection_points } from './discriminator';
 import transpose from './Matrix/transpose';
 import combination from './Probability/combination';
+import permutation from './Probability/permutation';
 
 const EM = {
   factorial,
@@ -14,6 +15,7 @@ const EM = {
   },
   probability: {
     combination,
+    permutation,
   },
 };
 

@@ -1,6 +1,6 @@
 import factorial from '../factorial';
 
-// TODO: above a certain threshold, it's not accurate anymore --> find a way to make it accurate
+// TODO: above a certain threshold, it's not accurate anymore --> find a way to make it accurate ???BIGINT???
 /**
  * Calculates the probability of a combination with a population of n and a sample size r
  * @param {number} n The size of the population
