@@ -2,13 +2,13 @@
 
 This package contain some enhanced mathematical operations:
 
-- [Discriminator](https://github.com/MoutPessemier/enhancedMathJS/blob/master/functions/discriminator.js)
-- [Factorial](https://github.com/MoutPessemier/enhancedMathJS/blob/master/functions/factorial.js)
-- [Fibonacci](https://github.com/MoutPessemier/enhancedMathJS/blob/master/functions/fibonacci.js)
+- [Discriminator](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/discriminator.ts)
+- [Factorial](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/factorial.ts)
+- [Fibonacci](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/fibonacci.ts)
 - Matrix:
-  - [Transpose](https://github.com/MoutPessemier/enhancedMathJS/blob/master/functions/Matrix/transpose.js)
+  - [Transpose](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/transpose.ts)
 - Probability:
-  - [Combination](https://github.com/MoutPessemier/enhancedMathJS/blob/master/functions/Probability/combination.js)
+  - [Combination](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Probability/combination.ts)
 
 ### Developers
 
