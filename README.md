@@ -7,6 +7,8 @@ This package contain some enhanced mathematical operations:
 - [Fibonacci](https://github.com/MoutPessemier/enhancedMathJS/blob/master/functions/fibonacci.js)
 - Matrix:
   - [Transpose](https://github.com/MoutPessemier/enhancedMathJS/blob/master/functions/Matrix/transpose.js)
+- Probability:
+  - [Combination](https://github.com/MoutPessemier/enhancedMathJS/blob/master/functions/Probability/combination.js)
 
 ### Developers
 

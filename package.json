@@ -1,6 +1,6 @@
 {
   "name": "enhancedmath",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "description": "This package contains some enhanced mathematical operations",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "jsdoc": "^3.6.6"
   }
 }

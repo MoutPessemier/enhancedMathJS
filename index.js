@@ -5,6 +5,7 @@ const {
   intersection_points,
 } = require("functions/discriminator");
 const transpose = require("functions/Matrix/transpose");
+const combination = require("functions/Probability/combination");
 
 const EM = {
   factorial,
@@ -13,6 +14,9 @@ const EM = {
   intersectionPoints: intersection_points,
   matrix: {
     transpose,
+  },
+  probability: {
+    combination,
   },
 };
 
