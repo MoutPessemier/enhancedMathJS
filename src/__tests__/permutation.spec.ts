@@ -15,4 +15,44 @@ describe('Combination', () => {
     const result = permutation(13, 5);
     expect(result).toBe(154440);
   });
+
+  test('should return undefined for fractional values', () => {
+    //@ts-ignore
+    let result = permutation(13 / 4, 5);
+    expect(result).toBe(undefined);
+    //@ts-ignore
+    result = permutation(13, 5 / 4);
+    expect(result).toBe(undefined);
+    //@ts-ignore
+    result = permutation(13 / 4, 5 / 4);
+    expect(result).toBe(undefined);
+  });
+
+  test('should return undefined for non numerical values', () => {
+    // This test is purely for javascript users who can't read docs and still want to try and calculate a permutation involving a string
+    //@ts-ignore
+    let result = permutation('13', 5);
+    expect(result).toBe(undefined);
+    //@ts-ignore
+    result = permutation(13, '5');
+    expect(result).toBe(undefined);
+    //@ts-ignore
+    result = permutation('13', '5');
+    expect(result).toBe(undefined);
+  });
+
+  test('should return undefined for n < r values', () => {
+    const result = permutation(1, 5);
+    expect(result).toBe(undefined);
+  });
+
+  test('should return undefined for n < 0 values', () => {
+    const result = permutation(-7, 5);
+    expect(result).toBe(undefined);
+  });
+
+  test('should return undefined for r < 0 values', () => {
+    const result = permutation(7, -5);
+    expect(result).toBe(undefined);
+  });
 });

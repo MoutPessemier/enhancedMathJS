@@ -19,8 +19,13 @@ const discriminator = (a: number, b: number, c: number) => {
 export const intersection_points = (a: number, b: number, c: number) => {
   const D = discriminator(a, b, c);
   if (D < 0) return [];
-  if (D === 0) return [-b / (2 * a)];
-  return [(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)];
+  if (a !== 0) {
+    if (D === 0) {
+      return [-b / (2 * a)];
+    }
+    return [(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)];
+  }
+  return undefined;
 };
 
 export default discriminator;

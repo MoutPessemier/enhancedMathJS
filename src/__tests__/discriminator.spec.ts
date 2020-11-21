@@ -16,12 +16,14 @@ describe('Discriminator', () => {
     const intersect = intersection_points(1, 1, 1);
     expect(intersect).toHaveLength(0);
   });
+
   test('should return an array with one element if D = 0', () => {
     let d = discriminator(1, 2, 1);
     expect(d).toBe(0);
     const intersect = intersection_points(1, 2, 1);
     expect(intersect).toHaveLength(1);
   });
+
   test('should return an array with two elements if D > 0', () => {
     let d = discriminator(1, 1, -6);
     expect(d).toBe(25);
@@ -31,11 +33,19 @@ describe('Discriminator', () => {
 
   test('should return the correct answer -b/2a when D = 0', () => {
     const intersect = intersection_points(1, 2, 1);
-    expect(intersect[0]).toBe(-1);
+    expect(intersect).toBeDefined();
+    expect(intersect![0]).toBe(-1);
   });
+
   test('should return the correct answers -b+sqrt(D)/2a and -b-sqrt(D)/2a', () => {
     const intersect = intersection_points(1, 1, -6);
-    expect(intersect[0]).toBe(2);
-    expect(intersect[1]).toBe(-3);
+    expect(intersect).toBeDefined();
+    expect(intersect![0]).toBe(2);
+    expect(intersect![1]).toBe(-3);
+  });
+
+  test('should return undefined if a = 0', () => {
+    const intersect = intersection_points(0, 1, -6);
+    expect(intersect).toBeUndefined();
   });
 });

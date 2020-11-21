@@ -6,7 +6,7 @@ import { isNumber, isFraction } from './Helpers/index';
  * @returns {number} The value of the row of Fibonnaci
  */
 const fibonacci = (index: number): number | undefined => {
-  if (index < 0 || isNumber(index) || isFraction(index)) return undefined;
+  if (index < 0 || !isNumber(index) || isFraction(index)) return undefined;
   if (index < 2) return 1;
   let temp = 0;
   let a = 1;

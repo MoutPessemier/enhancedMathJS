@@ -7,8 +7,12 @@ import factorial from '../factorial';
  * @param {number} r The sample size
  * @returns {number} The amount of possible combinations
  */
-const combination = (n: number, r: number): number => {
-  return factorial(n) / (factorial(r) * factorial(n - r));
+const combination = (n: number, r: number): number | undefined => {
+  if (0 <= r && r <= n) {
+    if (factorial(n) && factorial(r) && factorial(n - r)) return factorial(n)! / (factorial(r)! * factorial(n - r)!);
+    return undefined;
+  }
+  return undefined;
 };
 
 export default combination;

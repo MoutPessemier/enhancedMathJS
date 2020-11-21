@@ -15,4 +15,44 @@ describe('Combination', () => {
     const result = combination(13, 5);
     expect(result).toBe(1287);
   });
+
+  test('should return undefined for fractional values', () => {
+    // This test is purely for javascript users who can't read docs and still want to try and calculate a combination involving a string
+    //@ts-ignore
+    let result = combination(13 / 4, 5);
+    expect(result).toBe(undefined);
+    //@ts-ignore
+    result = combination(13, 5 / 4);
+    expect(result).toBe(undefined);
+    //@ts-ignore
+    result = combination(13 / 4, 5 / 4);
+    expect(result).toBe(undefined);
+  });
+
+  test('should return undefined for non numerical values', () => {
+    //@ts-ignore
+    let result = combination('13', 5);
+    expect(result).toBe(undefined);
+    //@ts-ignore
+    result = combination(13, '5');
+    expect(result).toBe(undefined);
+    //@ts-ignore
+    result = combination('13', '5');
+    expect(result).toBe(undefined);
+  });
+
+  test('should return undefined for n < r values', () => {
+    const result = combination(1, 5);
+    expect(result).toBe(undefined);
+  });
+
+  test('should return undefined for n < 0 values', () => {
+    const result = combination(-7, 5);
+    expect(result).toBe(undefined);
+  });
+
+  test('should return undefined for r < 0 values', () => {
+    const result = combination(7, -5);
+    expect(result).toBe(undefined);
+  });
 });
