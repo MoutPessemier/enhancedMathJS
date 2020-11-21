@@ -14,3 +14,14 @@ export const isNumber = (a: any): boolean => {
 export const isFraction = (a: number): boolean => {
   return Number(a) === a && a % 1 !== 0;
 };
+
+/**
+ * Gets the dimensions of the matrix a
+ * @param a A matrix (2D array)
+ */
+export const getDimensions = (a: Array<any[]>): { n: number; m: number } => {
+  const dims = { n: 0, m: 0 };
+  dims.n = a.length;
+  dims.m = a[0].length;
+  return dims;
+};
