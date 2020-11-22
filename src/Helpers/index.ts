@@ -19,9 +19,9 @@ export const isFraction = (a: number): boolean => {
  * Gets the dimensions of the matrix a
  * @param a A matrix (2D array)
  */
-export const getDimensions = (a: Array<any[]>): { n: number; m: number } => {
-  const dims = { n: 0, m: 0 };
-  dims.n = a.length;
-  dims.m = a[0].length;
+export const getDimensions = (a: Array<any[]>): { rows: number; cols: number } => {
+  const dims = { rows: 0, cols: 0 };
+  dims.rows = a.length;
+  dims.cols = a[0].length;
   return dims;
 };

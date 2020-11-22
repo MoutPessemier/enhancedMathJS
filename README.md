@@ -6,6 +6,7 @@ This package contain some enhanced mathematical operations:
 - [Factorial](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/factorial.ts)
 - [Fibonacci](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/fibonacci.ts)
 - Matrix:
+  - [Product](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/matrix_product.ts)
   - [Sum](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/matrix_sum.ts)
   - [Transpose](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/transpose.ts)
 - Probability:

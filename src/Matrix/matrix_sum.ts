@@ -8,7 +8,7 @@ import { getDimensions } from '../Helpers/index';
 const matrix_sum = (A: Array<number[]>, B: Array<number[]>) => {
   const dimsA = getDimensions(A);
   const dimsB = getDimensions(B);
-  if (dimsA.n === dimsB.n && dimsA.m === dimsB.m) {
+  if (dimsA.rows === dimsB.rows && dimsA.cols === dimsB.cols) {
     const sum = [];
     for (let i = 0; i < A.length; i++) {
       const row = [];
