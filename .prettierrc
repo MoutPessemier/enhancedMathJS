@@ -4,5 +4,6 @@
   "printWidth": 120,
   "semi": true,
   "bracketSpacing": true,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "trailingComma": "none"
 }

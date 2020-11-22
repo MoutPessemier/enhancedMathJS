@@ -6,7 +6,7 @@ import matrix_sum from './Matrix/matrix_sum';
 import matrix_product from './Matrix/matrix_product';
 import combination from './Probability/combination';
 import permutation from './Probability/permutation';
-import { generateIdentityMatrix } from './Matrix/utils';
+import { generateIdentityMatrix, generateZeroMatrix } from './Matrix/utils';
 
 const EM = {
   factorial,
@@ -24,7 +24,8 @@ const EM = {
   },
   generator: {
     matrix: {
-      identity: generateIdentityMatrix
+      identity: generateIdentityMatrix,
+      zero: generateZeroMatrix
     }
   }
 };
