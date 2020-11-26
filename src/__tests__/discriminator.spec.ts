@@ -11,21 +11,33 @@ describe('Discriminator', () => {
   });
 
   test('should return an empty array if D < 0', () => {
-    let d = discriminator(1, 1, 1);
+    const d = discriminator(1, 1, 1);
     expect(d).toBe(-3);
     const intersect = intersection_points(1, 1, 1);
     expect(intersect).toHaveLength(0);
   });
 
   test('should return an array with one element if D = 0', () => {
-    let d = discriminator(1, 2, 1);
+    const d = discriminator(1, 2, 1);
     expect(d).toBe(0);
     const intersect = intersection_points(1, 2, 1);
     expect(intersect).toHaveLength(1);
   });
 
+  test('should return undefined for non numerical values', () => {
+    //@ts-ignore
+    let d = discriminator('a', 2, 3);
+    expect(d).toBeUndefined();
+    //@ts-ignore
+    d = discriminator(1, 'b', 3);
+    expect(d).toBeUndefined();
+    //@ts-ignore
+    d = discriminator(1, 2, 'c');
+    expect(d).toBeUndefined();
+  });
+
   test('should return an array with two elements if D > 0', () => {
-    let d = discriminator(1, 1, -6);
+    const d = discriminator(1, 1, -6);
     expect(d).toBe(25);
     const intersect = intersection_points(1, 1, -6);
     expect(intersect).toHaveLength(2);
