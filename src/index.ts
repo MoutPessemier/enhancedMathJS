@@ -4,9 +4,17 @@ import discriminator, { intersection_points } from './discriminator';
 import transpose from './Matrix/transpose';
 import matrix_sum from './Matrix/matrix_sum';
 import matrix_product from './Matrix/matrix_product';
+import {
+  generateIdentityMatrix,
+  generateZeroMatrix,
+  // swapCol,
+  // swapElement,
+  swapRow,
+  multiplyMatrix
+  // multiplyRow
+} from './Matrix/utils';
 import combination from './Probability/combination';
 import permutation from './Probability/permutation';
-import { generateIdentityMatrix, generateZeroMatrix } from './Matrix/utils';
 
 const EM = {
   factorial,
@@ -16,7 +24,14 @@ const EM = {
   matrix: {
     transpose,
     sum: matrix_sum,
-    product: matrix_product
+    product: matrix_product,
+    mutations: {
+      swapRow,
+      // swapCol,
+      // swapElement,
+      multiplyMatrix
+      // multiplyRow
+    }
   },
   probability: {
     combination,
