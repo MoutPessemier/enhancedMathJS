@@ -87,6 +87,24 @@ describe('Matrix Utilities', () => {
     expect(result).toBeUndefined();
     result = swapRow(matrix, 4, 1);
     expect(result).toBeUndefined();
+    result = swapRow(matrix, -4, 1);
+    expect(result).toBeUndefined();
+    result = swapRow(matrix, 1, -2);
+    expect(result).toBeUndefined();
+  });
+
+  test('shoud return undefined for a non numeric values', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    //@ts-ignore
+    let result = swapRow(matrix, 'A', 2);
+    expect(result).toBeUndefined();
+    //@ts-ignore
+    result = swapRow(matrix, 2, 'A');
+    expect(result).toBeUndefined();
   });
 
   // test('shoud return undefined for a column higher than the dimension of the matrix', () => {
