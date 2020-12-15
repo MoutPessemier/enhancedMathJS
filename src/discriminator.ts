@@ -20,11 +20,10 @@ const discriminator = (a: number, b: number, c: number) => {
  * @returns {[]} The intersection points
  */
 export const intersection_points = (a: number, b: number, c: number) => {
-  const D = discriminator(a, b, c);
-  // can't check if(D) because if D === 0, it fails aswell
-  if (typeof D !== 'undefined') {
-    if (D < 0) return [];
-    if (a !== 0) {
+  if (a !== 0) {
+    const D = discriminator(a, b, c);
+    if (typeof D !== 'undefined') {
+      if (D < 0) return [];
       if (D === 0) {
         return [-b / (2 * a)];
       }
