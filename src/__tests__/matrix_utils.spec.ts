@@ -77,7 +77,7 @@ describe('Matrix Utilities', () => {
     );
   });
 
-  test('shoud return undefined for a row higher than the dimension of the matrix', () => {
+  test('should return undefined for a row higher than the dimension of the matrix', () => {
     const matrix = [
       [1, 2, 3],
       [4, 5, 6],
@@ -93,7 +93,7 @@ describe('Matrix Utilities', () => {
     expect(result).toBeUndefined();
   });
 
-  test('shoud return undefined for a non numeric values', () => {
+  test('should return undefined for a non numeric values', () => {
     const matrix = [
       [1, 2, 3],
       [4, 5, 6],
@@ -107,7 +107,7 @@ describe('Matrix Utilities', () => {
     expect(result).toBeUndefined();
   });
 
-  // test('shoud return undefined for a column higher than the dimension of the matrix', () => {
+  // test('should return undefined for a column higher than the dimension of the matrix', () => {
   //   const matrix = [
   //     [1, 2, 3],
   //     [4, 5, 6],
@@ -119,7 +119,7 @@ describe('Matrix Utilities', () => {
   //   expect(result).toBeUndefined();
   // });
 
-  // test('shoud return undefined for a row and a column higher than the dimension of the matrix', () => {
+  // test('should return undefined for a row and a column higher than the dimension of the matrix', () => {
   //   const matrix = [
   //     [1, 2, 3],
   //     [4, 5, 6],
