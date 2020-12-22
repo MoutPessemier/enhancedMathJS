@@ -28,20 +28,18 @@ describe('Matrix Utilities', () => {
 
   test('should return a 1x1 matrix for n = 1 - Identity', () => {
     const result = generateIdentityMatrix(1);
-    expect(result).toEqual(expect.arrayContaining([[1]]));
+    expect(result).toEqual([[1]]);
   });
 
   test('should return a 5x5 matrix for n = 5 - Identity', () => {
     const result = generateIdentityMatrix(5);
-    expect(result).toEqual(
-      expect.arrayContaining([
-        [1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 0, 1, 0],
-        [0, 0, 0, 0, 1]
-      ])
-    );
+    expect(result).toEqual([
+      [1, 0, 0, 0, 0],
+      [0, 1, 0, 0, 0],
+      [0, 0, 1, 0, 0],
+      [0, 0, 0, 1, 0],
+      [0, 0, 0, 0, 1]
+    ]);
   });
 
   test('should return undefined for nagative values - Zero', () => {
@@ -62,20 +60,18 @@ describe('Matrix Utilities', () => {
 
   test('should return a 1x1 matrix for n = 1 - Zero', () => {
     const result = generateZeroMatrix(1);
-    expect(result).toEqual(expect.arrayContaining([[0]]));
+    expect(result).toEqual([[0]]);
   });
 
   test('should return a 5x5 matrix for n = 5 - Zero', () => {
     const result = generateZeroMatrix(5);
-    expect(result).toEqual(
-      expect.arrayContaining([
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0]
-      ])
-    );
+    expect(result).toEqual([
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ]);
   });
 
   test('should return undefined for a row higher than the dimension of the matrix', () => {
@@ -145,14 +141,11 @@ describe('Matrix Utilities', () => {
       [7, 8, 9]
     ];
     const result = swapRow(matrix, 1, 2);
-    console.log(result);
-    expect(result).toEqual(
-      expect.arrayContaining([
-        [1, 2, 3],
-        [7, 8, 9],
-        [4, 5, 6]
-      ])
-    );
+    expect(result).toEqual([
+      [1, 2, 3],
+      [7, 8, 9],
+      [4, 5, 6]
+    ]);
   });
 
   // wip
@@ -163,12 +156,11 @@ describe('Matrix Utilities', () => {
   //     [7, 8, 9]
   //   ];
   //   const result = swapCol(matrix, 0, 1);
-  //   expect(result).toEqual(
-  //     expect.arrayContaining([
+  //   expect(result).toEqual([
   //       [5, 4, 6],
   //       [2, 1, 3],
   //       [8, 7, 9]
-  //     ])
+  //     ]
   //   );
   // });
 
@@ -181,11 +173,11 @@ describe('Matrix Utilities', () => {
   //   ];
   //   const result = swapElement(matrix, 0, 1, 1, 2);
   //   expect(result).toEqual(
-  //     expect.arrayContaining([
+  // [
   //       [1, 6, 3],
   //       [4, 5, 2],
   //       [7, 8, 9]
-  //     ])
+  //     ]
   //   );
   // });
 
@@ -207,13 +199,11 @@ describe('Matrix Utilities', () => {
       [7, 8, 9]
     ];
     const result = multiplyMatrix(matrix, 2);
-    expect(result).toEqual(
-      expect.arrayContaining([
-        [2, 4, 6],
-        [8, 10, 12],
-        [14, 16, 18]
-      ])
-    );
+    expect(result).toEqual([
+      [2, 4, 6],
+      [8, 10, 12],
+      [14, 16, 18]
+    ]);
   });
 
   test('should return 2 for 2x2 with no 0 rows', () => {
