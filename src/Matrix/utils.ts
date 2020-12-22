@@ -34,7 +34,8 @@ export const generateZeroMatrix = (n: number) => {
  * @param r2 Second row
  */
 export const swapRow = (matrix: Array<any[]>, r1: number, r2: number) => {
-  if (matrix.length < r1 || 0 > r1 || matrix.length < r2 || 0 > r2 || !isNumber(r1) || !isNumber(r2)) return undefined;
+  if (matrix.length <= r1 || r1 < 0 || matrix.length <= r2 || r2 < 0 || !isNumber(r1) || !isNumber(r2))
+    return undefined;
   const tempRow = matrix[r1];
   matrix[r1] = matrix[r2];
   matrix[r2] = tempRow;
