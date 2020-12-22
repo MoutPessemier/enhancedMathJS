@@ -4,8 +4,9 @@ import {
   // swapCol,
   // swapElement,
   swapRow,
-  multiplyMatrix
+  multiplyMatrix,
   // multiplyRow
+  rang
 } from '../Matrix/utils';
 
 describe('Matrix Utilities', () => {
@@ -212,5 +213,34 @@ describe('Matrix Utilities', () => {
         [14, 16, 18]
       ])
     );
+  });
+
+  test('should return 2 for 2x2 with no 0 rows', () => {
+    const matrix = [
+      [1, 2],
+      [4, 5]
+    ];
+    const result = rang(matrix);
+    expect(result).toBe(2);
+  });
+
+  test('should return 2 for 3x2 with 1 0 row', () => {
+    const matrix = [
+      [1, 2],
+      [4, 5],
+      [0, 0]
+    ];
+    const result = rang(matrix);
+    expect(result).toBe(2);
+  });
+
+  test('should return 2 for 3x2 with 1 0 row on a different row', () => {
+    const matrix = [
+      [1, 2],
+      [0, 0],
+      [4, 5]
+    ];
+    const result = rang(matrix);
+    expect(result).toBe(2);
   });
 });

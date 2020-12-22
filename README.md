@@ -12,6 +12,7 @@ This package contain some enhanced mathematical operations:
   - [Multiply Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/utils.ts)
   - [Multiply Row](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/utils.ts)
   - [Product](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/matrix_product.ts)
+  - [Rang](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/utils.ts)
   - [Sum](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/matrix_sum.ts)
   - [Swap Column](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/utils.ts)
   - [Swap Element](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/utils.ts)
