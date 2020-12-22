@@ -10,7 +10,8 @@ import {
   // swapCol,
   // swapElement,
   swapRow,
-  multiplyMatrix
+  multiplyMatrix,
+  rang
   // multiplyRow
 } from './Matrix/utils';
 import combination from './Probability/combination';
@@ -25,6 +26,7 @@ const EM = {
     transpose,
     sum: matrix_sum,
     product: matrix_product,
+    rang,
     mutations: {
       swapRow,
       // swapCol,
