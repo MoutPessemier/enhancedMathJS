@@ -48,17 +48,18 @@ export const swapRow = (matrix: Array<any[]>, r1: number, r2: number) => {
  * @param c1 First column
  * @param c2 Second column
  */
-// wip
-// export const swapCol = (matrix: Array<any[]>, c1: number, c2: number) => {
-//   if (matrix[0].length < c1 || matrix[0].length < c2) return undefined;
-//   let element;
-//   for (let i = 0; i < matrix.length; i++) {
-//     element = matrix[i][c1];
-//     matrix[i][c1] = matrix[i][c2];
-//     matrix[i][c2] = element;
-//   }
-//   return matrix;
-// };
+
+export const swapCol = (matrix: Array<any[]>, c1: number, c2: number) => {
+  if (matrix[0].length <= c1 || c1 < 0 || matrix[0].length <= c2 || c2 < 0 || !isNumber(c1) || !isNumber(c2))
+    return undefined;
+  let element;
+  for (let i = 0; i < matrix.length; i++) {
+    element = matrix[i][c1];
+    matrix[i][c1] = matrix[i][c2];
+    matrix[i][c2] = element;
+  }
+  return matrix;
+};
 
 /**
  * Swaps 2 elements in an array
@@ -68,14 +69,27 @@ export const swapRow = (matrix: Array<any[]>, r1: number, r2: number) => {
  * @param r2 The second element's row index
  * @param c2 The second element's column index
  */
-// wip
-// export const swapElement = (matrix: Array<any[]>, r1: number, c1: number, r2: number, c2: number) => {
-//   if (matrix.length < r1 || matrix.length < r2 || matrix[0].length < c1 || matrix[0].length < c2) return undefined;
-//   const element = matrix[r1][c1];
-//   matrix[r1][c1] = matrix[r2][c2];
-//   matrix[r2][c2] = element;
-//   return matrix;
-// };
+export const swapElement = (matrix: Array<any[]>, r1: number, c1: number, r2: number, c2: number) => {
+  if (
+    matrix.length <= r1 ||
+    matrix.length <= r2 ||
+    matrix[0].length <= c1 ||
+    matrix[0].length <= c2 ||
+    r1 < 0 ||
+    r2 < 0 ||
+    c1 < 0 ||
+    c2 < 0 ||
+    !isNumber(r1) ||
+    !isNumber(r2) ||
+    !isNumber(c1) ||
+    !isNumber(c2)
+  )
+    return undefined;
+  const element = matrix[r1][c1];
+  matrix[r1][c1] = matrix[r2][c2];
+  matrix[r2][c2] = element;
+  return matrix;
+};
 
 /**
  * Multiplies the whole matrix with lambda λX
@@ -87,18 +101,34 @@ export const multiplyMatrix = (matrix: Array<any[]>, λ: number) => {
   return matrix.map(row => row.map(element => element * λ));
 };
 
-// /**
-//  * Multiplies a single row of the matrix with λ
-//  * @param matrix The matrix
-//  * @param row The row which you want to multiply
-//  * @param λ The number with which you want to multiply the row
-//  */
-// wip
-// export const multiplyRow = (matrix: Array<any[]>, row: number, λ: number) => {
-//   if (matrix.length < row || !isNumber(λ)) return undefined;
-//   matrix[row] = matrix[row].map((v: number) => v * λ);
-//   return matrix;
-// };
+/**
+ * Multiplies a single row of the matrix with λ
+ * @param matrix The matrix
+ * @param row The row which you want to multiply
+ * @param λ The number with which you want to multiply the row
+ */
+export const multiplyRow = (matrix: Array<number[]>, row: number, λ: number) => {
+  if (matrix.length <= row || !isNumber(λ)) return undefined;
+  matrix[row] = matrix[row].map(v => v * λ);
+  return matrix;
+};
+
+/**
+ * Multiplies a single column of the matrix with λ
+ * @param matrix The matrix
+ * @param col The column which you want to multiply
+ * @param λ The number with which you want to multiply the column
+ */
+export const multiplyCol = (matrix: Array<number[]>, col: number, λ: number) => {
+  if (matrix[0].length <= col || !isNumber(λ)) return undefined;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (j === col) matrix[i][j] *= λ;
+    }
+  }
+  return matrix;
+};
 
 /**
  * Counts the amount of non 0 rows and subtracts it from the amount of rows in the matrix

@@ -1,11 +1,12 @@
 import {
   generateIdentityMatrix,
   generateZeroMatrix,
-  // swapCol,
-  // swapElement,
+  swapCol,
+  swapElement,
   swapRow,
   multiplyMatrix,
-  // multiplyRow
+  multiplyRow,
+  multiplyCol,
   rang
 } from '../Matrix/utils';
 
@@ -104,35 +105,61 @@ describe('Matrix Utilities', () => {
     expect(result).toBeUndefined();
   });
 
-  // test('should return undefined for a column higher than the dimension of the matrix', () => {
-  //   const matrix = [
-  //     [1, 2, 3],
-  //     [4, 5, 6],
-  //     [7, 8, 9]
-  //   ];
-  //   let result = swapCol(matrix, 1, 4);
-  //   expect(result).toBeUndefined();
-  //   result = swapCol(matrix, 4, 1);
-  //   expect(result).toBeUndefined();
-  // });
+  test('should return undefined for a column higher than the dimension of the matrix', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    let result = swapCol(matrix, 1, 4);
+    expect(result).toBeUndefined();
+    result = swapCol(matrix, 4, 1);
+    expect(result).toBeUndefined();
+  });
 
-  // test('should return undefined for a row and a column higher than the dimension of the matrix', () => {
-  //   const matrix = [
-  //     [1, 2, 3],
-  //     [4, 5, 6],
-  //     [7, 8, 9]
-  //   ];
-  //   let result = swapElement(matrix, 1, 2, 3, 5);
-  //   expect(result).toBeUndefined();
-  //   result = swapElement(matrix, 1, 2, 5, 3);
-  //   expect(result).toBeUndefined();
-  //   result = swapElement(matrix, 1, 4, 3, 3);
-  //   expect(result).toBeUndefined();
-  //   result = swapElement(matrix, 4, 2, 3, 3);
-  //   expect(result).toBeUndefined();
-  //   result = swapElement(matrix, 4, 2, 3, 5);
-  //   expect(result).toBeUndefined();
-  // });
+  test('should return undefined for a non numeric values', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    //@ts-ignore
+    let result = swapCol(matrix, 'A', 2);
+    expect(result).toBeUndefined();
+    //@ts-ignore
+    result = swapCol(matrix, 2, 'A');
+    expect(result).toBeUndefined();
+  });
+
+  test('should return undefined for a row and a column higher than the dimension of the matrix', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    let result = swapElement(matrix, 1, 2, 3, 5);
+    expect(result).toBeUndefined();
+    result = swapElement(matrix, 1, 2, 5, 3);
+    expect(result).toBeUndefined();
+    result = swapElement(matrix, 1, 4, 3, 3);
+    expect(result).toBeUndefined();
+    result = swapElement(matrix, 4, 2, 3, 3);
+    expect(result).toBeUndefined();
+    result = swapElement(matrix, 4, 2, 3, 5);
+    expect(result).toBeUndefined();
+    //@ts-ignore
+    result = swapElement(matrix, 'a', 2, 2, 0);
+    expect(result).toBeUndefined();
+    //@ts-ignore
+    result = swapElement(matrix, 1, 'a', 1, 0);
+    expect(result).toBeUndefined();
+    //@ts-ignore
+    result = swapElement(matrix, 1, 2, 'a', 0);
+    expect(result).toBeUndefined();
+    //@ts-ignore
+    result = swapElement(matrix, 0, 2, 0, 'a');
+    expect(result).toBeUndefined();
+  });
 
   test('should swap 2 rows', () => {
     const matrix = [
@@ -148,40 +175,35 @@ describe('Matrix Utilities', () => {
     ]);
   });
 
-  // wip
-  // test('should swap 2 columns', () => {
-  //   const matrix = [
-  //     [1, 2, 3],
-  //     [4, 5, 6],
-  //     [7, 8, 9]
-  //   ];
-  //   const result = swapCol(matrix, 0, 1);
-  //   expect(result).toEqual([
-  //       [5, 4, 6],
-  //       [2, 1, 3],
-  //       [8, 7, 9]
-  //     ]
-  //   );
-  // });
+  test('should swap 2 columns', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    const result = swapCol(matrix, 0, 1);
+    expect(result).toEqual([
+      [2, 1, 3],
+      [5, 4, 6],
+      [8, 7, 9]
+    ]);
+  });
 
-  // wip
-  // test('should swap 2 elements', () => {
-  //   const matrix = [
-  //     [1, 2, 3],
-  //     [4, 5, 6],
-  //     [7, 8, 9]
-  //   ];
-  //   const result = swapElement(matrix, 0, 1, 1, 2);
-  //   expect(result).toEqual(
-  // [
-  //       [1, 6, 3],
-  //       [4, 5, 2],
-  //       [7, 8, 9]
-  //     ]
-  //   );
-  // });
+  test('should swap 2 elements', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    const result = swapElement(matrix, 0, 1, 1, 2);
+    expect(result).toEqual([
+      [1, 6, 3],
+      [4, 5, 2],
+      [7, 8, 9]
+    ]);
+  });
 
-  test('should return undefined for non numeric values', () => {
+  test('should return undefined for non numeric values (matrix)', () => {
     const matrix = [
       [1, 2, 3],
       [4, 5, 6],
@@ -203,6 +225,56 @@ describe('Matrix Utilities', () => {
       [2, 4, 6],
       [8, 10, 12],
       [14, 16, 18]
+    ]);
+  });
+
+  test('should return undefined for non numeric values (row)', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    //@ts-ignore
+    const result = multiplyRow(matrix, 'abc');
+    expect(result).toBeUndefined();
+  });
+
+  test('should multiply row 1 with 2', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    const result = multiplyRow(matrix, 1, 2);
+    expect(result).toEqual([
+      [1, 2, 3],
+      [8, 10, 12],
+      [7, 8, 9]
+    ]);
+  });
+
+  test('should return undefined for non numeric values (col)', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    //@ts-ignore
+    const result = multiplyCol(matrix, 'abc');
+    expect(result).toBeUndefined();
+  });
+
+  test('should multiply col 1 with 2', () => {
+    const matrix = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
+    const result = multiplyCol(matrix, 1, 2);
+    expect(result).toEqual([
+      [1, 4, 3],
+      [4, 10, 6],
+      [7, 16, 9]
     ]);
   });
 

@@ -7,12 +7,13 @@ import matrix_product from './Matrix/matrix_product';
 import {
   generateIdentityMatrix,
   generateZeroMatrix,
-  // swapCol,
-  // swapElement,
+  swapCol,
+  swapElement,
   swapRow,
   multiplyMatrix,
+  multiplyRow,
+  multiplyCol,
   rang
-  // multiplyRow
 } from './Matrix/utils';
 import combination from './Probability/combination';
 import permutation from './Probability/permutation';
@@ -29,10 +30,11 @@ const EM = {
     rang,
     mutations: {
       swapRow,
-      // swapCol,
-      // swapElement,
-      multiplyMatrix
-      // multiplyRow
+      swapCol,
+      swapElement,
+      multiplyMatrix,
+      multiplyRow,
+      multiplyCol
     }
   },
   probability: {
