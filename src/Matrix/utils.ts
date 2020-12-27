@@ -121,7 +121,6 @@ export const multiplyRow = (matrix: Array<number[]>, row: number, λ: number) =>
  */
 export const multiplyCol = (matrix: Array<number[]>, col: number, λ: number) => {
   if (matrix[0].length <= col || !isNumber(λ)) return undefined;
-
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
       if (j === col) matrix[i][j] *= λ;

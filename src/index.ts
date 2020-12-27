@@ -17,6 +17,7 @@ import {
 } from './Matrix/utils';
 import combination from './Probability/combination';
 import permutation from './Probability/permutation';
+import { getDimensions, isFraction, isNumber } from './Helpers/index';
 
 const EM = {
   factorial,
@@ -46,6 +47,11 @@ const EM = {
       identity: generateIdentityMatrix,
       zero: generateZeroMatrix
     }
+  },
+  helper_functions: {
+    getDimensions,
+    isFraction,
+    isNumber
   }
 };
 

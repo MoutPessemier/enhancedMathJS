@@ -25,3 +25,8 @@ export const getDimensions = (a: Array<any[]>): { rows: number; cols: number } =
   dims.cols = a[0].length;
   return dims;
 };
+
+export const containsStringValues = (matrix: Array<any[]>) => {
+  const result = matrix.map(row => row.every((e: any) => typeof e === 'string'));
+  return result.includes(true);
+};
