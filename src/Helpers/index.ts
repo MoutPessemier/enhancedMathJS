@@ -26,7 +26,20 @@ export const getDimensions = (a: Array<any[]>): { rows: number; cols: number } =
   return dims;
 };
 
+/**
+ * Check if the matrix contains string values.
+ * @param matrix The matrix
+ */
 export const containsStringValues = (matrix: Array<any[]>) => {
   const result = matrix.map(row => row.every((e: any) => typeof e === 'string'));
   return result.includes(true);
+};
+
+/**
+ * Checks if the matrix is a square one
+ * @param matrix The matrix
+ */
+export const isSquareMatrix = (matrix: Array<any[]>) => {
+  const dim = getDimensions(matrix);
+  return dim.rows === dim.cols;
 };

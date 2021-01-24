@@ -13,11 +13,11 @@ import {
   multiplyMatrix,
   multiplyRow,
   multiplyCol,
-  rang
+  rank
 } from './Matrix/utils';
 import combination from './Probability/combination';
 import permutation from './Probability/permutation';
-import { getDimensions, isFraction, isNumber } from './Helpers/index';
+import { getDimensions, isFraction, isNumber, containsStringValues, isSquareMatrix } from './Helpers/index';
 
 const EM = {
   factorial,
@@ -28,7 +28,7 @@ const EM = {
     transpose,
     sum: matrix_sum,
     product: matrix_product,
-    rang,
+    rank,
     mutations: {
       swapRow,
       swapCol,
@@ -51,7 +51,9 @@ const EM = {
   helper_functions: {
     getDimensions,
     isFraction,
-    isNumber
+    isNumber,
+    containsStringValues,
+    isSquareMatrix
   }
 };
 
