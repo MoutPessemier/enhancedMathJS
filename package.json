@@ -16,7 +16,12 @@
     "math",
     "probability",
     "algebra",
-    "matrix"
+    "matrix",
+    "discriminator",
+    "factorial",
+    "fibonacci",
+    "combination",
+    "permutation"
   ],
   "author": "Mout Pessemier",
   "license": "ISC",
