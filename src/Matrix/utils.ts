@@ -133,7 +133,7 @@ export const multiplyCol = (matrix: Array<number[]>, col: number, λ: number) =>
  * Counts the amount of non 0 rows and subtracts it from the amount of rows in the matrix
  * @param matrix The matrix
  */
-export const rang = (matrix: Array<number[]>) => {
+export const rank = (matrix: Array<number[]>) => {
   const trueVector = matrix.map(row => row.every(e => e === 0));
   return matrix.length - trueVector.filter(Boolean).length;
 };
