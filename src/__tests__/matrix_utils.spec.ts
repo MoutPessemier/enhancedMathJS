@@ -7,7 +7,7 @@ import {
   multiplyMatrix,
   multiplyRow,
   multiplyCol,
-  rang
+  rank
 } from '../Matrix/utils';
 
 describe('Matrix Utilities', () => {
@@ -283,7 +283,7 @@ describe('Matrix Utilities', () => {
       [1, 2],
       [4, 5]
     ];
-    const result = rang(matrix);
+    const result = rank(matrix);
     expect(result).toBe(2);
   });
 
@@ -293,7 +293,7 @@ describe('Matrix Utilities', () => {
       [4, 5],
       [0, 0]
     ];
-    const result = rang(matrix);
+    const result = rank(matrix);
     expect(result).toBe(2);
   });
 
@@ -303,7 +303,7 @@ describe('Matrix Utilities', () => {
       [0, 0],
       [4, 5]
     ];
-    const result = rang(matrix);
+    const result = rank(matrix);
     expect(result).toBe(2);
   });
 });
