@@ -2,7 +2,9 @@
 
 This package contain some enhanced mathematical operations:
 
-- [Discriminator](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/discriminator.ts)
+- Algebra
+  - [Bisection](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/bisection.ts)
+  - [Discriminator](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/discriminator.ts)
 - [Factorial](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/factorial.ts)
 - [Fibonacci](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/fibonacci.ts)
 - Matrix:
@@ -20,11 +22,58 @@ This package contain some enhanced mathematical operations:
   - [Swap Row](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/utils.ts#L36)
   - [Transpose](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/transpose.ts)
   - [Zero Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/utils.ts#L21)
-- Probability:
+- Probability
   - [Combination](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Probability/combination.ts)
   - [Permutation](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Probability/permutation.ts)
+- Helper Functions
+  - [Contains String Valus](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L33)
+  - [Get Dimensions](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L22)
+  - [Is Fraction](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L14)
+  - [Is Number](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L5)
+  - [Is Square Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L42)
 
-### Developers
+### Usage
+
+Start by importing the main object into your document
+
+```js
+import EM from 'enhancedmath';
+```
+
+Every single method is added onto this object, treat it a bit like the built-in `Math` object. Some methods are divided into further object, so search through the object for what you need.
+
+##### Examples
+
+###### Discriminator
+
+```js
+import EM from 'enhancedmath';
+
+const d = EM.discriminator(2, 9, -1);
+if (d < 0) {
+  console.log('...');
+} else if (d === 0) {
+  console.log('...');
+} else {
+  console.log('...');
+}
+```
+
+###### Matrix - Transpose
+
+```js
+import EM from 'enhancedmath';
+
+const m = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+const trans_m = EM.matrix.transpose(m);
+console.log(trans_m);
+```
+
+### Developer
 
 Mout Pessemier:
 
