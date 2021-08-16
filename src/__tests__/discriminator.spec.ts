@@ -1,4 +1,4 @@
-import discriminator, { intersection_points } from '../discriminator';
+import discriminator, { intersection_points } from '../Algebra/discriminator';
 
 describe('Discriminator', () => {
   test('should calculate the correct discriminator', () => {
