@@ -56,4 +56,14 @@ describe('transpose', () => {
       [4, 5, 6]
     ]);
   });
+
+  it('transpose of an array with an empty row should return the transposed array with null values for that row', () => {
+    const matrix = [[], [1, 2, 3]];
+    const tMap = transpose(matrix);
+    expect(tMap).toEqual([
+      [null, 1],
+      [null, 2],
+      [null, 3]
+    ]);
+  });
 });

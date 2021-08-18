@@ -1,4 +1,6 @@
 import {
+  isSquareMatrix,
+  getHighestRowLength,
   generateIdentityMatrix,
   generateZeroMatrix,
   swapCol,
@@ -8,9 +10,46 @@ import {
   multiplyRow,
   multiplyCol,
   rank
-} from '../Matrix/utils';
+  // calculateCofactorMatrix
+} from '../Helpers';
 
-describe('Matrix Utilities', () => {
+describe('Helper functions', () => {
+  test('square matrix should return true', () => {
+    const matrix = [
+      [1, 2],
+      [3, 4]
+    ];
+    const result = isSquareMatrix(matrix);
+    expect(result).toBeTruthy();
+  });
+
+  test('not square matrix should return false', () => {
+    const matrix = [
+      [1, 2, 3],
+      [2, 4, 6]
+    ];
+    const result = isSquareMatrix(matrix);
+    expect(result).toBeFalsy();
+  });
+
+  test('highest number of elements in a row should be 4', () => {
+    const matrix = [[1, 2], [1, 2, 3], [1, 2, 3, 4], [0]];
+    const result = getHighestRowLength(matrix);
+    expect(result).toEqual(4);
+  });
+
+  test('highest number of elements in a row should be 4 when two rows have the same amount of elements', () => {
+    const matrix = [[1, 2], [1, 2, 3, 4], [1, 2, 3, 4], [0]];
+    const result = getHighestRowLength(matrix);
+    expect(result).toEqual(4);
+  });
+
+  test('highest number of elements in a row should be 0 for an empty array', () => {
+    const matrix = [[]];
+    const result = getHighestRowLength(matrix);
+    expect(result).toEqual(0);
+  });
+
   test('should return undefined for nagative values - Identity', () => {
     const result = generateIdentityMatrix(-7);
     expect(result).toBeUndefined();
@@ -306,4 +345,18 @@ describe('Matrix Utilities', () => {
     const result = rank(matrix);
     expect(result).toBe(2);
   });
+
+  // test('should return cofactor of matrix', () => {
+  //   const matrix = [
+  //     [2, 3, 5],
+  //     [0, 7, 2],
+  //     [1, 3, 2]
+  //   ];
+  //   const result = calculateCofactorMatrix(matrix);
+  //   expect(result).toEqual([
+  //     [8, 2, -7],
+  //     [9, -1, -3],
+  //     [-29, -4, 14]
+  //   ]);
+  // });
 });
