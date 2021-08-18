@@ -221,4 +221,4 @@ export const rank = (matrix: Array<number[]>) => {
 //     cofMatrix.push(row);
 //   }
 //   return cofMatrix;
-};
+// };

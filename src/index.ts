@@ -13,11 +13,17 @@ import {
   multiplyMatrix,
   multiplyRow,
   multiplyCol,
-  rank
-} from './Matrix/utils';
+  rank,
+  getDimensions,
+  isFraction,
+  isNumber,
+  containsStringValues,
+  isSquareMatrix,
+  fillEmptyRows,
+  getHighestRowLength
+} from './Helpers/index';
 import combination from './Probability/combination';
 import permutation from './Probability/permutation';
-import { getDimensions, isFraction, isNumber, containsStringValues, isSquareMatrix } from './Helpers/index';
 
 const EM = {
   factorial,
@@ -35,7 +41,8 @@ const EM = {
       swapElement,
       multiplyMatrix,
       multiplyRow,
-      multiplyCol
+      multiplyCol,
+      fillEmptyRows
     }
   },
   probability: {
@@ -53,7 +60,8 @@ const EM = {
     isFraction,
     isNumber,
     containsStringValues,
-    isSquareMatrix
+    isSquareMatrix,
+    getHighestRowLength
   }
 };
 
