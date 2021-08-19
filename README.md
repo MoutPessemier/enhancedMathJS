@@ -3,7 +3,7 @@
 This package contain some enhanced mathematical operations:
 
 - Algebra
-  - [Bisection(WIP)](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/bisection.ts)
+  - [Bisection](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/bisection.ts)
   - [Discriminator](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/discriminator.ts)
 - [Factorial](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/factorial.ts)
 - [Fibonacci](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/fibonacci.ts)
@@ -33,6 +33,8 @@ This package contain some enhanced mathematical operations:
   - [Is Number](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L5)
   - [Is Square Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L42)
   - [Highest Row Length](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L52)
+
+<hr>
 
 ### Usage
 
@@ -74,6 +76,8 @@ const m = [
 const trans_m = EM.matrix.transpose(m);
 console.log(trans_m);
 ```
+
+<hr>
 
 ### Developer
 
