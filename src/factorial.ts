@@ -2,7 +2,7 @@ import BigNumber from 'bignumber.js';
 import { isNumber, isFraction } from './Helpers/index';
 
 /**
- * Calculates the factorial of n recursively
+ * Calculates the factorial of n
  * @param {number} n The amount
  * @returns {number} The factorial of n
  */

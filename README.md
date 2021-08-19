@@ -27,12 +27,12 @@ This package contain some enhanced mathematical operations:
   - [Combination](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Probability/combination.ts)
   - [Permutation](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Probability/permutation.ts)
 - Helper Functions
-  - [Contains String Valus](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L33)
+  - [Contains String Values](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L33)
   - [Get Dimensions](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L22)
   - [Is Fraction](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L14)
   - [Is Number](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L5)
   - [Is Square Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L42)
-  - [Higest Row Length](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L52)
+  - [Highest Row Length](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L52)
 
 ### Usage
 
