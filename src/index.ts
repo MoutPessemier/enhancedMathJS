@@ -1,6 +1,7 @@
 import factorial from './factorial';
 import fibonacci from './fibonacci';
 import discriminator, { intersection_points } from './Algebra/discriminator';
+import bisection from './Algebra/bisection';
 import transpose from './Matrix/transpose';
 import matrix_sum from './Matrix/matrix_sum';
 import matrix_product from './Matrix/matrix_product';
@@ -28,7 +29,10 @@ import permutation from './Probability/permutation';
 const EM = {
   factorial,
   fibonacci,
-  discriminator,
+  algebra: {
+    discriminator,
+    bisection
+  },
   intersectionPoints: intersection_points,
   matrix: {
     transpose,

@@ -6,7 +6,7 @@
  * @param f Function. e.g. 3x^3+5x^2+3x+5
  * @returns the value of x where f(a) = f(b) with the given approximation
  */
-const bissection = (a: number, b: number, accuracy: number, f: (c: number) => number): number | null => {
+const bisection = (a: number, b: number, accuracy: number, f: (c: number) => number): number | null => {
   let l: number, r: number, x: number;
   l = a;
   r = b;
@@ -26,4 +26,4 @@ const bissection = (a: number, b: number, accuracy: number, f: (c: number) => nu
   return x;
 };
 
-export default bissection;
+export default bisection;
