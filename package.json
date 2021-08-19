@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf lib && tsc",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
@@ -22,7 +22,9 @@
     "factorial",
     "fibonacci",
     "combination",
-    "permutation"
+    "permutation",
+    "determinant",
+    "transpose"
   ],
   "author": "Mout Pessemier",
   "license": "ISC",
