@@ -66,4 +66,17 @@ describe('transpose', () => {
       [null, 3]
     ]);
   });
+
+  it('should fill the empty spots with null when transposing an array', () => {
+    const matrix = [
+      [, , ,],
+      [7, 8, 9]
+    ];
+    const tMap = transpose(matrix);
+    expect(tMap).toEqual([
+      [null, 7],
+      [null, 8],
+      [null, 9]
+    ]);
+  });
 });

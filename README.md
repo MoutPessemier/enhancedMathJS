@@ -3,7 +3,7 @@
 This package contain some enhanced mathematical operations:
 
 - Algebra
-  - [Bisection](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/bisection.ts)
+  - [Bisection(WIP)](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/bisection.ts)
   - [Discriminator](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/discriminator.ts)
 - [Factorial](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/factorial.ts)
 - [Fibonacci](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/fibonacci.ts)

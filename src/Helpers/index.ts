@@ -60,8 +60,15 @@ export const getHighestRowLength = (matrix: Array<any[]>) => {
 
 export const fillEmptyRows = (matrix: Array<any[]>, rowLength: number, value: any) => {
   return matrix.map(row => {
+    // check for empty array
     if (row.length === 0) {
       return new Array(rowLength).fill(value);
+      // check for empty spots
+    } else if (Object.values(row).length !== row.length) {
+      return Array.from(row, (_, i) => {
+        if (!(i in row)) return null;
+        else return row[i];
+      });
     }
     return row;
   });
