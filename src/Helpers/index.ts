@@ -45,8 +45,8 @@ export const isSquareMatrix = (matrix: Array<any[]>) => {
 };
 
 /**
- * Loops through the matrix to find the row with the most elements an returns how many eleents there are
- * @param matrix The given matri
+ * Loops through the matrix to find the row with the most elements an returns how many elements there are
+ * @param matrix The given matrix
  * @returns The amount of elements
  */
 export const getHighestRowLength = (matrix: Array<any[]>) => {

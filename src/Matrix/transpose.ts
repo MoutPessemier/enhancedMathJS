@@ -1,9 +1,9 @@
 import { fillEmptyRows, getHighestRowLength } from '../Helpers';
 
 /**
- * Returns the transpose of a matrix
+ * Returns the transposed matrix
  * @param {Array<any[]>} matrix A 2d array
- * @returns {Array<any[]>} The transpose of the matrix
+ * @returns {Array<any[]>} The transposed matrix
  */
 const transpose = (matrix: Array<any[]>): Array<any[]> => {
   const rowlength = getHighestRowLength(matrix);
