@@ -1,3 +1,8 @@
+/**
+ * Transforms data into a stem and leaf plot.
+ * @param data The data to show in the plot
+ * @returns A string containing the plot
+ */
 const stemleafplot = (data: number[]) => {
   let plot = '';
   const sortedData = data.sort((a, b) => a - b);
