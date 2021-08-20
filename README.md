@@ -26,6 +26,7 @@ This package contain some enhanced mathematical operations:
 - Probability
   - [Combination](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Probability/combination.ts)
   - [Permutation](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Probability/permutation.ts)
+  - [Stem and Leaf Plot](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Probability/stemleafplot.ts)
 - Helper Functions
   - [Contains String Values](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L33)
   - [Get Dimensions](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L22)
