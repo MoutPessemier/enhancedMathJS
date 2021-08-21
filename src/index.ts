@@ -25,15 +25,12 @@ import {
 } from './Helpers/index';
 import combination from './Probability/combination';
 import permutation from './Probability/permutation';
+import stemleafplot from './Probability/stemleafplot';
 
 const EM = {
   factorial,
   fibonacci,
-  algebra: {
-    discriminator,
-    bisection
-  },
-  intersectionPoints: intersection_points,
+  algebra: { discriminator, intersectionPoints: { intersection_points, bisection } },
   matrix: {
     transpose,
     sum: matrix_sum,
@@ -51,7 +48,8 @@ const EM = {
   },
   probability: {
     combination,
-    permutation
+    permutation,
+    stemleafplot
   },
   generator: {
     matrix: {

@@ -12,6 +12,7 @@ This package contain some enhanced mathematical operations:
   - [Determinant (WIP)](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/determinant.ts)
   - [Fill Empty Rows](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L212)
   - [Identity Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L74)
+  - [Inverse Matrix(WIP)](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/inverse.ts)
   - [Multiply Column](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L189)
   - [Multiply Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L166)
   - [Multiply Row](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L177)
@@ -49,12 +50,21 @@ Every single method is added onto this object, treat it a bit like the built-in 
 
 ##### Examples
 
-###### Discriminator
+###### Factorial
 
 ```js
 import EM from 'enhancedmath';
 
-const d = EM.discriminator(2, 9, -1);
+const f = EM.factorial(10);
+console.log(f);
+```
+
+###### Algebra - Discriminator
+
+```js
+import EM from 'enhancedmath';
+
+const d = EM.algebra.discriminator(2, 9, -1);
 if (d < 0) {
   console.log('...');
 } else if (d === 0) {
@@ -62,6 +72,19 @@ if (d < 0) {
 } else {
   console.log('...');
 }
+```
+
+###### Algebra - Bisection
+
+Depending on the range of the starting interval, you will find different intersection points
+
+```js
+import EM from 'enhancedmath';
+
+let result = EM.algebra.intersectionPoints.bisection(-2, 0, 0.001, (x: number) => x * x - 1);
+console.log(result);
+result = EM.algebra.intersectionPoints.bisection(0, 2, 0.001, (x: number) => x * x - 1);
+console.log(result);
 ```
 
 ###### Matrix - Transpose
@@ -76,6 +99,31 @@ const m = [
 ];
 const trans_m = EM.matrix.transpose(m);
 console.log(trans_m);
+```
+
+###### Matrix - Swap Row
+
+```js
+import EM from 'enhancedmath';
+
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+const swappedMatrix = EM.matrix.mutations.swapRow(matrix, 0, 2);
+console.log(swappedMatrix);
+```
+
+###### Probability - Stem and leaf plot
+
+```js
+import EM from 'enhancedmath';
+
+const data = [8, 12, 23, 9, 102, 7, 87, 68, 83, 25, 19, 28];
+const plot = EM.probability.stemleafplot(data);
+console.log(plot);
 ```
 
 <hr>
