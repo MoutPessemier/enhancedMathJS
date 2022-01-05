@@ -140,5 +140,3 @@ Mout Pessemier:
 - [reeveng](https://github.com/reeveng)
 - [Jef Malfliet](https://github.com/Jef-Malfliet)
 - [mxfactorial](https://github.com/mxfactorial)
-
-Copyright 2020 &copy; by Mout Pessemier
