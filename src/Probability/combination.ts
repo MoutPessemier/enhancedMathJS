@@ -8,12 +8,12 @@ import BigNumber from 'bignumber.js';
  * @returns {number} The amount of possible combinations
  */
 const combination = (n: number, r: number): BigNumber | undefined => {
-  if (0 <= r && r <= n) {
-    if (factorial(n) && factorial(r) && factorial(n - r))
-      return new BigNumber(factorial(n)!.dividedBy(factorial(r)!.multipliedBy(factorial(n - r)!)));
-    return undefined;
-  }
-  return undefined;
+	if (0 <= r && r <= n) {
+		if (factorial(n) && factorial(r) && factorial(n - r))
+			return new BigNumber(factorial(n)!.dividedBy(factorial(r)!.multipliedBy(factorial(n - r)!)));
+		return undefined;
+	}
+	return undefined;
 };
 
 export default combination;

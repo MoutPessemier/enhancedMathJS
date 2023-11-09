@@ -8,8 +8,8 @@ import { isNumber } from '../Helpers';
  * @returns {number} The discriminator
  */
 const discriminator = (a: number, b: number, c: number) => {
-  if (!isNumber(a) || !isNumber(b) || !isNumber(c)) return undefined;
-  return Math.pow(b, 2) - 4 * a * c;
+	if (!isNumber(a) || !isNumber(b) || !isNumber(c)) return undefined;
+	return Math.pow(b, 2) - 4 * a * c;
 };
 
 /**
@@ -20,17 +20,17 @@ const discriminator = (a: number, b: number, c: number) => {
  * @returns {[]} The intersection points
  */
 export const intersection_points = (a: number, b: number, c: number) => {
-  if (a !== 0) {
-    const D = discriminator(a, b, c);
-    if (typeof D !== 'undefined') {
-      if (D < 0) return [];
-      if (D === 0) {
-        return [-b / (2 * a)];
-      }
-      return [(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)];
-    }
-  }
-  return undefined;
+	if (a !== 0) {
+		const D = discriminator(a, b, c);
+		if (typeof D !== 'undefined') {
+			if (D < 0) return [];
+			if (D === 0) {
+				return [-b / (2 * a)];
+			}
+			return [(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)];
+		}
+	}
+	return undefined;
 };
 
 export default discriminator;
