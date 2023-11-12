@@ -7,18 +7,18 @@ import { isNumber, isFraction } from './Helpers/index';
  * @returns {number} The value of the row of Fibonnaci
  */
 const fibonacci = (index: number): BigNumber | undefined => {
-  if (index < 0 || !isNumber(index) || isFraction(index)) return undefined;
-  if (index < 2) new BigNumber(1);
-  let temp = new BigNumber(0);
-  let a = new BigNumber(1);
-  let b = new BigNumber(0);
-  while (index >= 0) {
-    temp = a;
-    a = a.plus(b);
-    b = temp;
-    index--;
-  }
-  return b;
+	if (index < 0 || !isNumber(index) || isFraction(index)) return undefined;
+	if (index < 2) new BigNumber(1);
+	let temp = new BigNumber(0);
+	let a = new BigNumber(1);
+	let b = new BigNumber(0);
+	while (index >= 0) {
+		temp = a;
+		a = a.plus(b);
+		b = temp;
+		index--;
+	}
+	return b;
 };
 
 export default fibonacci;

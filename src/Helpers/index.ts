@@ -2,8 +2,8 @@
  * Check if the parameter is of type number
  * @param a Any input
  */
-export const isNumber = (a: any): boolean => {
-  return typeof a === 'number';
+export const isNumber = <T>(a: T): boolean => {
+	return typeof a === 'number';
 };
 
 // see https://stackoverflow.com/questions/3885817/how-do-i-check-that-a-number-is-float-or-integer/20779354#20779354
@@ -12,36 +12,36 @@ export const isNumber = (a: any): boolean => {
  * @param a The number a
  */
 export const isFraction = (a: number): boolean => {
-  return Number(a) === a && a % 1 !== 0;
+	return Number(a) === a && a % 1 !== 0;
 };
 
 /**
  * Gets the dimensions of the matrix a
  * @param a A matrix (2D array)
  */
-export const getDimensions = (a: Array<any[]>): { rows: number; cols: number } => {
-  const dims = { rows: 0, cols: 0 };
-  dims.rows = a.length;
-  dims.cols = a[0].length;
-  return dims;
+export const getDimensions = <T>(a: Array<T[]>): { rows: number; cols: number } => {
+	const dims = { rows: 0, cols: 0 };
+	dims.rows = a.length;
+	dims.cols = a[0].length;
+	return dims;
 };
 
 /**
  * Check if the matrix contains string values.
  * @param matrix The matrix
  */
-export const containsStringValues = (matrix: Array<any[]>) => {
-  const result = matrix.map(row => row.every((e: any) => typeof e === 'string'));
-  return result.includes(true);
+export const containsStringValues = <T>(matrix: Array<T[]>) => {
+	const result = matrix.map((row) => row.every((e: T) => typeof e === 'string'));
+	return result.includes(true);
 };
 
 /**
  * Checks if the matrix is a square one
  * @param matrix The matrix
  */
-export const isSquareMatrix = (matrix: Array<any[]>) => {
-  const dim = getDimensions(matrix);
-  return dim.rows === dim.cols;
+export const isSquareMatrix = <T>(matrix: Array<T[]>) => {
+	const dim = getDimensions(matrix);
+	return dim.rows === dim.cols;
 };
 
 /**
@@ -49,29 +49,29 @@ export const isSquareMatrix = (matrix: Array<any[]>) => {
  * @param matrix The given matrix
  * @returns The amount of elements
  */
-export const getHighestRowLength = (matrix: Array<any[]>) => {
-  return matrix.reduce((accumulator, current) => {
-    if (accumulator < current.length) {
-      return current.length;
-    }
-    return accumulator;
-  }, 0);
+export const getHighestRowLength = <T>(matrix: Array<T[]>) => {
+	return matrix.reduce((accumulator, current) => {
+		if (accumulator < current.length) {
+			return current.length;
+		}
+		return accumulator;
+	}, 0);
 };
 
-export const fillEmptyRows = (matrix: Array<any[]>, rowLength: number, value: any) => {
-  return matrix.map(row => {
-    // check for empty array
-    if (row.length === 0) {
-      return new Array(rowLength).fill(value);
-      // check for empty spots
-    } else if (Object.values(row).length !== row.length) {
-      return Array.from(row, (_, i) => {
-        if (!(i in row)) return null;
-        else return row[i];
-      });
-    }
-    return row;
-  });
+export const fillEmptyRows = <T>(matrix: Array<T[]>, rowLength: number, value: T) => {
+	return matrix.map((row) => {
+		// check for empty array
+		if (row.length === 0) {
+			return new Array(rowLength).fill(value);
+			// check for empty spots
+		} else if (Object.values(row).length !== row.length) {
+			return Array.from(row, (_, i) => {
+				if (!(i in row)) return null;
+				else return row[i];
+			});
+		}
+		return row;
+	});
 };
 
 /**
@@ -79,13 +79,13 @@ export const fillEmptyRows = (matrix: Array<any[]>, rowLength: number, value: an
  * @param n The size of the identity matrix
  */
 export const generateIdentityMatrix = (n: number) => {
-  if (n < 0 || !isNumber(n) || isFraction(n)) return undefined;
-  const result = new Array(n);
-  for (let i = 0; i < n; i++) {
-    result[i] = new Array(n).fill(0);
-    result[i][i] = 1;
-  }
-  return result;
+	if (n < 0 || !isNumber(n) || isFraction(n)) return undefined;
+	const result = new Array(n);
+	for (let i = 0; i < n; i++) {
+		result[i] = new Array(n).fill(0);
+		result[i][i] = 1;
+	}
+	return result;
 };
 
 /**
@@ -93,12 +93,12 @@ export const generateIdentityMatrix = (n: number) => {
  * @param n The size of the 0 matrix
  */
 export const generateZeroMatrix = (n: number) => {
-  if (n < 0 || !isNumber(n) || isFraction(n)) return undefined;
-  const result = new Array(n);
-  for (let i = 0; i < n; i++) {
-    result[i] = new Array(n).fill(0);
-  }
-  return result;
+	if (n < 0 || !isNumber(n) || isFraction(n)) return undefined;
+	const result = new Array(n);
+	for (let i = 0; i < n; i++) {
+		result[i] = new Array(n).fill(0);
+	}
+	return result;
 };
 
 /**
@@ -107,13 +107,13 @@ export const generateZeroMatrix = (n: number) => {
  * @param r1 First row
  * @param r2 Second row
  */
-export const swapRow = (matrix: Array<any[]>, r1: number, r2: number) => {
-  if (matrix.length <= r1 || r1 < 0 || matrix.length <= r2 || r2 < 0 || !isNumber(r1) || !isNumber(r2))
-    return undefined;
-  const tempRow = matrix[r1];
-  matrix[r1] = matrix[r2];
-  matrix[r2] = tempRow;
-  return matrix;
+export const swapRow = <T>(matrix: Array<T[]>, r1: number, r2: number) => {
+	if (matrix.length <= r1 || r1 < 0 || matrix.length <= r2 || r2 < 0 || !isNumber(r1) || !isNumber(r2))
+		return undefined;
+	const tempRow = matrix[r1];
+	matrix[r1] = matrix[r2];
+	matrix[r2] = tempRow;
+	return matrix;
 };
 
 /**
@@ -123,16 +123,16 @@ export const swapRow = (matrix: Array<any[]>, r1: number, r2: number) => {
  * @param c2 Second column
  */
 
-export const swapCol = (matrix: Array<any[]>, c1: number, c2: number) => {
-  if (matrix[0].length <= c1 || c1 < 0 || matrix[0].length <= c2 || c2 < 0 || !isNumber(c1) || !isNumber(c2))
-    return undefined;
-  let element;
-  for (let i = 0; i < matrix.length; i++) {
-    element = matrix[i][c1];
-    matrix[i][c1] = matrix[i][c2];
-    matrix[i][c2] = element;
-  }
-  return matrix;
+export const swapCol = <T>(matrix: Array<T[]>, c1: number, c2: number) => {
+	if (matrix[0].length <= c1 || c1 < 0 || matrix[0].length <= c2 || c2 < 0 || !isNumber(c1) || !isNumber(c2))
+		return undefined;
+	let element;
+	for (let i = 0; i < matrix.length; i++) {
+		element = matrix[i][c1];
+		matrix[i][c1] = matrix[i][c2];
+		matrix[i][c2] = element;
+	}
+	return matrix;
 };
 
 /**
@@ -143,26 +143,26 @@ export const swapCol = (matrix: Array<any[]>, c1: number, c2: number) => {
  * @param r2 The second element's row index
  * @param c2 The second element's column index
  */
-export const swapElement = (matrix: Array<any[]>, r1: number, c1: number, r2: number, c2: number) => {
-  if (
-    matrix.length <= r1 ||
-    matrix.length <= r2 ||
-    matrix[0].length <= c1 ||
-    matrix[0].length <= c2 ||
-    r1 < 0 ||
-    r2 < 0 ||
-    c1 < 0 ||
-    c2 < 0 ||
-    !isNumber(r1) ||
-    !isNumber(r2) ||
-    !isNumber(c1) ||
-    !isNumber(c2)
-  )
-    return undefined;
-  const element = matrix[r1][c1];
-  matrix[r1][c1] = matrix[r2][c2];
-  matrix[r2][c2] = element;
-  return matrix;
+export const swapElement = <T>(matrix: Array<T[]>, r1: number, c1: number, r2: number, c2: number) => {
+	if (
+		matrix.length <= r1 ||
+		matrix.length <= r2 ||
+		matrix[0].length <= c1 ||
+		matrix[0].length <= c2 ||
+		r1 < 0 ||
+		r2 < 0 ||
+		c1 < 0 ||
+		c2 < 0 ||
+		!isNumber(r1) ||
+		!isNumber(r2) ||
+		!isNumber(c1) ||
+		!isNumber(c2)
+	)
+		return undefined;
+	const element = matrix[r1][c1];
+	matrix[r1][c1] = matrix[r2][c2];
+	matrix[r2][c2] = element;
+	return matrix;
 };
 
 /**
@@ -170,9 +170,9 @@ export const swapElement = (matrix: Array<any[]>, r1: number, c1: number, r2: nu
  * @param matrix The matrix
  * @param λ The number with which you want to multiply the matrix
  */
-export const multiplyMatrix = (matrix: Array<any[]>, λ: number) => {
-  if (!isNumber(λ)) return undefined;
-  return matrix.map(row => row.map(element => element * λ));
+export const multiplyMatrix = (matrix: Array<number[]>, λ: number) => {
+	if (!isNumber(λ)) return undefined;
+	return matrix.map((row) => row.map((element) => element * λ));
 };
 
 /**
@@ -182,9 +182,9 @@ export const multiplyMatrix = (matrix: Array<any[]>, λ: number) => {
  * @param λ The number with which you want to multiply the row
  */
 export const multiplyRow = (matrix: Array<number[]>, row: number, λ: number) => {
-  if (matrix.length <= row || !isNumber(λ)) return undefined;
-  matrix[row] = matrix[row].map(v => v * λ);
-  return matrix;
+	if (matrix.length <= row || !isNumber(λ)) return undefined;
+	matrix[row] = matrix[row].map((v) => v * λ);
+	return matrix;
 };
 
 /**
@@ -194,13 +194,13 @@ export const multiplyRow = (matrix: Array<number[]>, row: number, λ: number) =>
  * @param λ The number with which you want to multiply the column
  */
 export const multiplyCol = (matrix: Array<number[]>, col: number, λ: number) => {
-  if (matrix[0].length <= col || !isNumber(λ)) return undefined;
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-      if (j === col) matrix[i][j] *= λ;
-    }
-  }
-  return matrix;
+	if (matrix[0].length <= col || !isNumber(λ)) return undefined;
+	for (let i = 0; i < matrix.length; i++) {
+		for (let j = 0; j < matrix[i].length; j++) {
+			if (j === col) matrix[i][j] *= λ;
+		}
+	}
+	return matrix;
 };
 
 /**
@@ -208,12 +208,12 @@ export const multiplyCol = (matrix: Array<number[]>, col: number, λ: number) =>
  * @param matrix The matrix
  */
 export const rank = (matrix: Array<number[]>) => {
-  const trueVector = matrix.map(row => row.every(e => e === 0));
-  return matrix.length - trueVector.filter(Boolean).length;
+	const trueVector = matrix.map((row) => row.every((e) => e === 0));
+	return matrix.length - trueVector.filter(Boolean).length;
 };
 
 // /**
-//  * Calculates the cofactor of each element in the matrix
+//  * Calculates the co-factor of each element in the matrix
 //  * @param matrix The matrix
 //  */
 // export const calculateCofactorMatrix = (matrix: Array<number[]>) => {

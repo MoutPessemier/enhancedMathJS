@@ -13,7 +13,4 @@ lib/
 Thumbs.db
 
 # Output Files
-junit.xml
-
-# TODO Files
-notes_to_fix.md
+test/test-results.xml

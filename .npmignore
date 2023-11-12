@@ -2,5 +2,5 @@ src/
 .editorconfig
 .prettierrc
 jest.config.js
-junit.xml
+test/test-results.xml
 tsconfig.json
