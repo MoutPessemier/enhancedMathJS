@@ -6,7 +6,9 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .
   ci:
     needs: checkout
     runs-on: ubuntu-latest
