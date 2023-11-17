@@ -6,8 +6,8 @@ import { fillEmptyRows, getHighestRowLength } from '../Helpers';
  * @returns {Array<any[]>} The transposed matrix
  */
 const transpose = <T>(matrix: T[][]) => {
-	const rowlength = getHighestRowLength(matrix);
-	const filledMatrix = fillEmptyRows(matrix, rowlength, null);
+	const rowLength = getHighestRowLength(matrix);
+	const filledMatrix = fillEmptyRows(matrix, rowLength, null);
 	return filledMatrix[0].map((_, colIndex) => filledMatrix.map((row) => row[colIndex]));
 };
 
