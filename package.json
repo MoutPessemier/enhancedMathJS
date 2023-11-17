@@ -9,7 +9,7 @@
     "lint": "npm run eslint && npm run typecheck",
     "test": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "format": "prettier --write src",
+    "format": "prettier --write ./src",
     "eslint": "eslint --fix --ext .ts src/",
     "typecheck": "tsc --noEmit"
   },
