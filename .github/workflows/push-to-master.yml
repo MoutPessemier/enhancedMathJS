@@ -3,31 +3,14 @@ on:
   push:
     branches: [master]
 jobs:
-  checkout:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           sparse-checkout: .
-  ci:
-    needs: checkout
-    runs-on: ubuntu-latest
-    steps:
-      - run: npm i
-  lint:
-      needs: ci
-      runs-on: ubuntu-latest
-      steps:
-      - run: |
-          npm run format
-          npm run lint
-  test:
-      needs: ci
-      runs-on: ubuntu-latest
-      steps:
+      - run: npm ci
+      - run: npm run format
+      - run: npm run lint
       - run: npm run test
-  build:
-      needs: [ci, lint, test]
-      runs-on: ubuntu-latest
-      steps:
       - run: npm run build
