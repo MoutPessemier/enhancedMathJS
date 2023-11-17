@@ -1,4 +1,5 @@
 import { describe, test, expect } from 'vitest';
+
 import matrix_product from '../Matrix/matrix_product';
 
 describe('Matrix: Product', () => {

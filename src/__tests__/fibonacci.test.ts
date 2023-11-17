@@ -1,4 +1,5 @@
 import { describe, test, expect } from 'vitest';
+
 import fibonacci from '../fibonacci';
 
 describe('Fibonacci', () => {

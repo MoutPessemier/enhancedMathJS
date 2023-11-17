@@ -1,5 +1,6 @@
-import factorial from '../factorial';
 import BigNumber from 'bignumber.js';
+
+import factorial from '../factorial';
 
 /**
  * Calculates the probability of a permutation with a population of n and a sample size r

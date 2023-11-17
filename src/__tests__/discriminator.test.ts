@@ -1,4 +1,5 @@
 import { describe, test, expect } from 'vitest';
+
 import discriminator, { intersection_points } from '../Algebra/discriminator';
 
 describe('Discriminator', () => {

@@ -19,7 +19,7 @@ export const isFraction = (a: number): boolean => {
  * Gets the dimensions of the matrix a
  * @param a A matrix (2D array)
  */
-export const getDimensions = <T>(a: Array<T[]>): { rows: number; cols: number } => {
+export const getDimensions = <T>(a: T[][]): { rows: number; cols: number } => {
 	const dims = { rows: 0, cols: 0 };
 	dims.rows = a.length;
 	dims.cols = a[0].length;
@@ -30,7 +30,7 @@ export const getDimensions = <T>(a: Array<T[]>): { rows: number; cols: number } 
  * Check if the matrix contains string values.
  * @param matrix The matrix
  */
-export const containsStringValues = <T>(matrix: Array<T[]>) => {
+export const containsStringValues = <T>(matrix: T[][]) => {
 	const result = matrix.map((row) => row.every((e: T) => typeof e === 'string'));
 	return result.includes(true);
 };
@@ -39,7 +39,7 @@ export const containsStringValues = <T>(matrix: Array<T[]>) => {
  * Checks if the matrix is a square one
  * @param matrix The matrix
  */
-export const isSquareMatrix = <T>(matrix: Array<T[]>) => {
+export const isSquareMatrix = <T>(matrix: T[][]) => {
 	const dim = getDimensions(matrix);
 	return dim.rows === dim.cols;
 };
@@ -49,7 +49,7 @@ export const isSquareMatrix = <T>(matrix: Array<T[]>) => {
  * @param matrix The given matrix
  * @returns The amount of elements
  */
-export const getHighestRowLength = <T>(matrix: Array<T[]>) => {
+export const getHighestRowLength = <T>(matrix: T[][]) => {
 	return matrix.reduce((accumulator, current) => {
 		if (accumulator < current.length) {
 			return current.length;
@@ -58,11 +58,11 @@ export const getHighestRowLength = <T>(matrix: Array<T[]>) => {
 	}, 0);
 };
 
-export const fillEmptyRows = <T>(matrix: Array<T[]>, rowLength: number, value: T) => {
+export const fillEmptyRows = <T>(matrix: T[][], rowLength: number, value: T) => {
 	return matrix.map((row) => {
 		// check for empty array
 		if (row.length === 0) {
-			return new Array(rowLength).fill(value);
+			return new Array<T>(rowLength).fill(value);
 			// check for empty spots
 		} else if (Object.values(row).length !== row.length) {
 			return Array.from(row, (_, i) => {
@@ -80,9 +80,9 @@ export const fillEmptyRows = <T>(matrix: Array<T[]>, rowLength: number, value: T
  */
 export const generateIdentityMatrix = (n: number) => {
 	if (n < 0 || !isNumber(n) || isFraction(n)) return undefined;
-	const result = new Array(n);
+	const result = new Array<number[]>(n);
 	for (let i = 0; i < n; i++) {
-		result[i] = new Array(n).fill(0);
+		result[i] = new Array<number>(n).fill(0);
 		result[i][i] = 1;
 	}
 	return result;
@@ -94,9 +94,9 @@ export const generateIdentityMatrix = (n: number) => {
  */
 export const generateZeroMatrix = (n: number) => {
 	if (n < 0 || !isNumber(n) || isFraction(n)) return undefined;
-	const result = new Array(n);
+	const result = new Array<number[]>(n);
 	for (let i = 0; i < n; i++) {
-		result[i] = new Array(n).fill(0);
+		result[i] = new Array<number>(n).fill(0);
 	}
 	return result;
 };
@@ -107,7 +107,7 @@ export const generateZeroMatrix = (n: number) => {
  * @param r1 First row
  * @param r2 Second row
  */
-export const swapRow = <T>(matrix: Array<T[]>, r1: number, r2: number) => {
+export const swapRow = <T>(matrix: T[][], r1: number, r2: number) => {
 	if (matrix.length <= r1 || r1 < 0 || matrix.length <= r2 || r2 < 0 || !isNumber(r1) || !isNumber(r2))
 		return undefined;
 	const tempRow = matrix[r1];
@@ -123,7 +123,7 @@ export const swapRow = <T>(matrix: Array<T[]>, r1: number, r2: number) => {
  * @param c2 Second column
  */
 
-export const swapCol = <T>(matrix: Array<T[]>, c1: number, c2: number) => {
+export const swapCol = <T>(matrix: T[][], c1: number, c2: number) => {
 	if (matrix[0].length <= c1 || c1 < 0 || matrix[0].length <= c2 || c2 < 0 || !isNumber(c1) || !isNumber(c2))
 		return undefined;
 	let element;
@@ -143,7 +143,7 @@ export const swapCol = <T>(matrix: Array<T[]>, c1: number, c2: number) => {
  * @param r2 The second element's row index
  * @param c2 The second element's column index
  */
-export const swapElement = <T>(matrix: Array<T[]>, r1: number, c1: number, r2: number, c2: number) => {
+export const swapElement = <T>(matrix: T[][], r1: number, c1: number, r2: number, c2: number) => {
 	if (
 		matrix.length <= r1 ||
 		matrix.length <= r2 ||
@@ -170,7 +170,7 @@ export const swapElement = <T>(matrix: Array<T[]>, r1: number, c1: number, r2: n
  * @param matrix The matrix
  * @param λ The number with which you want to multiply the matrix
  */
-export const multiplyMatrix = (matrix: Array<number[]>, λ: number) => {
+export const multiplyMatrix = (matrix: number[][], λ: number) => {
 	if (!isNumber(λ)) return undefined;
 	return matrix.map((row) => row.map((element) => element * λ));
 };
@@ -181,7 +181,7 @@ export const multiplyMatrix = (matrix: Array<number[]>, λ: number) => {
  * @param row The row which you want to multiply
  * @param λ The number with which you want to multiply the row
  */
-export const multiplyRow = (matrix: Array<number[]>, row: number, λ: number) => {
+export const multiplyRow = (matrix: number[][], row: number, λ: number) => {
 	if (matrix.length <= row || !isNumber(λ)) return undefined;
 	matrix[row] = matrix[row].map((v) => v * λ);
 	return matrix;
@@ -193,7 +193,7 @@ export const multiplyRow = (matrix: Array<number[]>, row: number, λ: number) =>
  * @param col The column which you want to multiply
  * @param λ The number with which you want to multiply the column
  */
-export const multiplyCol = (matrix: Array<number[]>, col: number, λ: number) => {
+export const multiplyCol = (matrix: number[][], col: number, λ: number) => {
 	if (matrix[0].length <= col || !isNumber(λ)) return undefined;
 	for (let i = 0; i < matrix.length; i++) {
 		for (let j = 0; j < matrix[i].length; j++) {
@@ -207,7 +207,7 @@ export const multiplyCol = (matrix: Array<number[]>, col: number, λ: number) =>
  * Counts the amount of non 0 rows and subtracts it from the amount of rows in the matrix
  * @param matrix The matrix
  */
-export const rank = (matrix: Array<number[]>) => {
+export const rank = (matrix: number[][]) => {
 	const trueVector = matrix.map((row) => row.every((e) => e === 0));
 	return matrix.length - trueVector.filter(Boolean).length;
 };

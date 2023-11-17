@@ -1,4 +1,5 @@
 import { describe, test, expect } from 'vitest';
+
 import combination from '../Probability/combination';
 
 describe('Combination', () => {

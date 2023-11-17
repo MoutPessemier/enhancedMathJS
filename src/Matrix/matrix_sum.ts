@@ -5,7 +5,7 @@ import { getDimensions } from '../Helpers/index';
  * @param B Matrix B
  */
 
-const matrix_sum = (A: Array<number[]>, B: Array<number[]>) => {
+const matrix_sum = (A: number[][], B: number[][]) => {
 	const dimsA = getDimensions(A);
 	const dimsB = getDimensions(B);
 	if (dimsA.rows === dimsB.rows && dimsA.cols === dimsB.cols) {

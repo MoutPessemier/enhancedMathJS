@@ -1,4 +1,5 @@
 import { describe, test, expect } from 'vitest';
+
 import bisection from '../Algebra/bisection';
 
 describe('bisection', () => {

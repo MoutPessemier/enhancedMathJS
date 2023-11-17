@@ -1,10 +1,7 @@
+import bisection from './Algebra/bisection';
+import discriminator, { intersection_points } from './Algebra/discriminator';
 import factorial from './factorial';
 import fibonacci from './fibonacci';
-import discriminator, { intersection_points } from './Algebra/discriminator';
-import bisection from './Algebra/bisection';
-import transpose from './Matrix/transpose';
-import matrix_sum from './Matrix/matrix_sum';
-import matrix_product from './Matrix/matrix_product';
 import {
 	generateIdentityMatrix,
 	generateZeroMatrix,
@@ -23,6 +20,9 @@ import {
 	fillEmptyRows,
 	getHighestRowLength,
 } from './Helpers/index';
+import matrix_product from './Matrix/matrix_product';
+import matrix_sum from './Matrix/matrix_sum';
+import transpose from './Matrix/transpose';
 import combination from './Probability/combination';
 import permutation from './Probability/permutation';
 import stemleafplot from './Probability/stemleafplot';

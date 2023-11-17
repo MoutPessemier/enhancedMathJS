@@ -1,4 +1,5 @@
 import { describe, test, expect } from 'vitest';
+
 import transpose from '../Matrix/transpose';
 
 describe('transpose', () => {

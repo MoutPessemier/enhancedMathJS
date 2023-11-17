@@ -1,4 +1,5 @@
 import { describe, test, expect } from 'vitest';
+
 import stemleafplot from '../Probability/stemleafplot';
 
 describe('Stem and Leaf plot', () => {

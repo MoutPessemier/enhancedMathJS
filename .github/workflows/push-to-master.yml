@@ -3,13 +3,21 @@ on:
   push:
     branches: [master]
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - run: npm ci
+  lint:
+      runs-on: ubuntu-latest
+      steps:
       - run: |
-          npm ci
           npm run format
           npm run lint
-          npm run test
-          npm run build
+  test:
+      runs-on: ubuntu-latest
+      steps:
+      - run: npm run test
+  build:
+      runs-on: ubuntu-latest
+      steps:
+      - run: npm run build
