@@ -7,22 +7,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.1.0
-      - uses: ./
   ci:
+    needs: checkout
     runs-on: ubuntu-latest
     steps:
       - run: npm i
   lint:
+      needs: ci
       runs-on: ubuntu-latest
       steps:
       - run: |
           npm run format
           npm run lint
   test:
+      needs: ci
       runs-on: ubuntu-latest
       steps:
       - run: npm run test
   build:
+      needs: [ci, lint, test]
       runs-on: ubuntu-latest
       steps:
       - run: npm run build
