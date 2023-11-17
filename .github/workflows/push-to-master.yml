@@ -3,6 +3,11 @@ on:
   push:
     branches: [master]
 jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.1.0
+      - uses: ./
   ci:
     runs-on: ubuntu-latest
     steps:
