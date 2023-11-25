@@ -9,8 +9,8 @@
     "lint": "npm run eslint && npm run typecheck",
     "test": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "format": "prettier --write **/*.{js,ts} && prettier --write **/**/*.{js,ts}",
-    "eslint": "eslint --fix --ext .ts src/",
+    "format": "prettier --write **/*.{js,ts} && prettier --write **/**/",
+    "eslint": "npx eslint --fix --ext .ts ./",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
