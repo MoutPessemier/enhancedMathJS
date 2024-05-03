@@ -20,17 +20,17 @@ const discriminator = (a: number, b: number, c: number) => {
  * @returns {[]} The intersection points
  */
 export const intersection_points = (a: number, b: number, c: number) => {
-	if (a !== 0) {
-		const D = discriminator(a, b, c);
-		if (typeof D !== 'undefined') {
-			if (D < 0) return [];
-			if (D === 0) {
-				return [-b / (2 * a)];
-			}
-			return [(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)];
-		}
+	if (a === 0) {
+		return undefined;
 	}
-	return undefined;
+	const D = discriminator(a, b, c);
+	if (typeof D !== 'undefined') {
+		if (D < 0) return [];
+		if (D === 0) {
+			return [-b / (2 * a)];
+		}
+		return [(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)];
+	}
 };
 
 export default discriminator;
