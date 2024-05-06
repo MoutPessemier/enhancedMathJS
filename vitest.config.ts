@@ -7,6 +7,7 @@ export default defineConfig({
 	test: {
 		coverage: {
 			include: ['src'],
+			exclude: ['**/node_modules/**'],
 			reporter: ['text', 'cobertura', 'html'],
 		},
 		reporters: ['junit', 'basic'],
