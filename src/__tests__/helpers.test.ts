@@ -12,7 +12,7 @@ import {
 	multiplyRow,
 	multiplyCol,
 	rank,
-	// calculateCofactorMatrix
+	getDimensions,
 } from '../Helpers';
 
 describe('Helper functions', () => {
@@ -346,6 +346,28 @@ describe('Helper functions', () => {
 		];
 		const result = rank(matrix);
 		expect(result).toBe(2);
+	});
+
+	test('dims should return 3 and 3 for a 3x3 matrix', () => {
+		const matrix = [
+			[2, 3, 5],
+			[0, 7, 2],
+			[1, 3, 2],
+		];
+		const result = getDimensions(matrix);
+		expect(result).toEqual({ rows: 3, cols: 3 });
+	});
+
+	test('dims should return 1 and 0 for a 1x1 matrix', () => {
+		const matrix = [[2]];
+		const result = getDimensions(matrix);
+		expect(result).toEqual({ rows: 1, cols: 1 });
+	});
+
+	test('dims should return 1 and 0 for a 1x0 matrix', () => {
+		const matrix = [[]];
+		const result = getDimensions(matrix);
+		expect(result).toEqual({ rows: 1, cols: 0 });
 	});
 
 	// test('should return cofactor of matrix', () => {
