@@ -13,6 +13,7 @@ import {
 	multiplyCol,
 	rank,
 	getDimensions,
+	getMatrixMinor,
 } from '../Helpers';
 
 describe('Helper functions', () => {
@@ -370,17 +371,41 @@ describe('Helper functions', () => {
 		expect(result).toEqual({ rows: 1, cols: 0 });
 	});
 
-	// test('should return cofactor of matrix', () => {
-	//   const matrix = [
-	//     [2, 3, 5],
-	//     [0, 7, 2],
-	//     [1, 3, 2]
-	//   ];
-	//   const result = calculateCofactorMatrix(matrix);
-	//   expect(result).toEqual([
-	//     [8, 2, -7],
-	//     [9, -1, -3],
-	//     [-29, -4, 14]
-	//   ]);
-	// });
+	test('should return the matrix minor for a 2x2 matrix', () => {
+		const matrix = [
+			[1, 2],
+			[3, 4],
+		];
+		const expectedMatrix = [[3]];
+		expect(getMatrixMinor(matrix, 0, 1)).toEqual(expectedMatrix);
+	});
+
+	test('should return the matrix minor for a 3x3 matrix', () => {
+		const matrix = [
+			[1, 2, 3],
+			[4, 5, 6],
+			[7, 8, 9],
+		];
+		const expectedMatrix = [
+			[4, 6],
+			[7, 9],
+		];
+		expect(getMatrixMinor(matrix, 0, 1)).toEqual(expectedMatrix);
+	});
+
+	test('should return an empty array if the row and column do not exist in the matrix', () => {
+		const matrix = [
+			[1, 2],
+			[3, 4],
+		];
+		expect(getMatrixMinor(matrix, 2, 2)).toBeUndefined();
+	});
+
+	test('should return the original matrix if the row and column are negative', () => {
+		const matrix = [
+			[1, 2],
+			[3, 4],
+		];
+		expect(getMatrixMinor(matrix, -1, -1)).toEqual(matrix);
+	});
 });

@@ -11,7 +11,7 @@ export const isNumber = <T>(a: T): boolean => {
  * Check if the parameter is a fractional value
  * @param a The number a
  */
-export const isFraction = (a: number): boolean => {
+export const isFraction = (a: number) => {
 	return Number(a) === a && a % 1 !== 0;
 };
 
@@ -19,7 +19,7 @@ export const isFraction = (a: number): boolean => {
  * Gets the dimensions of the matrix a
  * @param a A matrix (2D array)
  */
-export const getDimensions = <T>(a: T[][]): { rows: number; cols: number } => {
+export const getDimensions = <T>(a: T[][]) => {
 	const dims = { rows: 0, cols: 0 };
 	dims.rows = a.length;
 	dims.cols = a[0].length;
@@ -212,20 +212,19 @@ export const rank = (matrix: number[][]) => {
 	return matrix.length - trueVector.filter(Boolean).length;
 };
 
-// /**
-//  * Calculates the co-factor of each element in the matrix
-//  * @param matrix The matrix
-//  */
-// export const calculateCofactorMatrix = (matrix: Array<number[]>) => {
-//   const cofMatrix = [];
-//   for (let i = 0; i < matrix.length; i++) {
-//     const row = [];
-//     for (let j = 0; j < matrix[i].length; j++) {
-//       const minor = matrix[i][j];
-//       const cofactor = Math.pow(-1, i + j + 2) * minor;
-//       row.push(cofactor);
-//     }
-//     cofMatrix.push(row);
-//   }
-//   return cofMatrix;
-// };
+/**
+ * Calculates the minor of a given matrix
+ * @param matrix The matrix
+ * @param row The row
+ * @param column The column
+ */
+export const getMatrixMinor = (matrix: number[][], row: number, column: number) => {
+	const { rows, cols } = getDimensions(matrix);
+	if (row > rows - 1 || column > cols - 1) return undefined;
+	return matrix.reduce((result: number[][], current, i) => {
+		if (i !== row) {
+			result.push(current.filter((_, j) => j !== column));
+		}
+		return result;
+	}, []);
+};

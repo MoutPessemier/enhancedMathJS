@@ -19,6 +19,7 @@ import {
 	isSquareMatrix,
 	fillEmptyRows,
 	getHighestRowLength,
+	getMatrixMinor,
 } from './Helpers/index';
 import matrix_product from './Matrix/matrix_product';
 import matrix_sum from './Matrix/matrix_sum';
@@ -64,6 +65,7 @@ const EM = {
 		containsStringValues,
 		isSquareMatrix,
 		getHighestRowLength,
+		minorMatrix: getMatrixMinor,
 	},
 };
 
