@@ -21,6 +21,7 @@ import {
 	getHighestRowLength,
 	getMatrixMinor,
 } from './Helpers/index';
+import determinant from './Matrix/determinant';
 import matrix_product from './Matrix/matrix_product';
 import matrix_sum from './Matrix/matrix_sum';
 import transpose from './Matrix/transpose';
@@ -37,6 +38,7 @@ const EM = {
 		sum: matrix_sum,
 		product: matrix_product,
 		rank,
+		determinant,
 		mutations: {
 			swapRow,
 			swapCol,
