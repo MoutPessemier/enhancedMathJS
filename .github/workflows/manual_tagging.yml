@@ -1,20 +1,43 @@
-name: Manual Tagging
+name: Make tag and publish to NPM
 
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version'
+      bump:
+        description: 'Bump'
         required: true
 
 jobs:
   tag:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        registry-url: 'https://registry.npmjs.org'
     - name: Bump version and push tag
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git tag ${{ github.event.inputs.version }}
-        git push origin ${{ github.event.inputs.version }}
+        if [ ${{ github.event.inputs.bump }}  = "major" ]; then
+          npm version major
+        elif [ ${{ github.event.inputs.bump }}  = "minor" ]; then
+          npm version minor
+        elif [ ${{ github.event.inputs.bump }}  = "patch" ]; then
+          npm version patch
+        else
+          echo "Invalid bump type"
+          exit 1
+        fi
+        git push origin --tags
+        git push
+    - name: Install dependencies
+      run: npm ci
+    - name: Build
+      run: npm run build
+    - name: Publish
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
