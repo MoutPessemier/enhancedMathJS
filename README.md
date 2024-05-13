@@ -8,6 +8,7 @@ This package contain some enhanced mathematical operations:
 - [Factorial](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/factorial.ts)
 - [Fibonacci](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/fibonacci.ts)
 - Matrix:
+  - [Determinant](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/determinant.ts)
   - [Fill Empty Rows](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L61)
   - [Identity Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L81)
   - [Minor Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L221)
