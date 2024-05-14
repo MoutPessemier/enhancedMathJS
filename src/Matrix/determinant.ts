@@ -1,4 +1,4 @@
-import { getDimensions, getMatrixMinor } from 'src/Helpers';
+import { getDimensions, getMatrixMinor } from '../Helpers/index';
 
 /**
  * Recursively calculate the determinant of a matrix, making use of the minor matrix
