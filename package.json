@@ -1,6 +1,6 @@
 {
   "name": "enhancedmath",
-  "version": "2.13.2",
+  "version": "2.14.0",
   "description": "This package contains some enhanced mathematical operations",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
