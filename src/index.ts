@@ -21,6 +21,7 @@ import {
 	getHighestRowLength,
 	getMatrixMinor,
 } from './Helpers/index';
+import cofactorMatrix from './Matrix/cofactor';
 import determinant from './Matrix/determinant';
 import matrix_product from './Matrix/matrix_product';
 import matrix_sum from './Matrix/matrix_sum';
@@ -39,6 +40,7 @@ const EM = {
 		product: matrix_product,
 		rank,
 		determinant,
+		cofactorMatrix,
 		mutations: {
 			swapRow,
 			swapCol,
