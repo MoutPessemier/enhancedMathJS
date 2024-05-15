@@ -23,6 +23,7 @@ const cofactorMatrix = (matrix: number[][]) => {
 			const minor = getMatrixMinor(matrix, i, j);
 			const det = determinant(minor!)!;
 			const result = sign * det;
+			// TODO: Clean this up
 			// eslint-disable-next-line no-compare-neg-zero
 			if (result === -0) {
 				row.push(0);

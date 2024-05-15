@@ -12,6 +12,7 @@ This package contain some enhanced mathematical operations:
   - [Determinant](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/determinant.ts)
   - [Fill Empty Rows](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L61)
   - [Identity Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L81)
+  - [Inverse Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Matrix/inverse.ts)
   - [Minor Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L221)
   - [Multiply Column](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L196)
   - [Multiply Matrix](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Helpers/index.ts#L173)

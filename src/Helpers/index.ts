@@ -169,10 +169,11 @@ export const swapElement = <T>(matrix: T[][], r1: number, c1: number, r2: number
  * Multiplies the whole matrix with lambda λX
  * @param matrix The matrix
  * @param λ The number with which you want to multiply the matrix
+ * @param precision [precision = 3] The specificity to which you want to round the numbers
  */
-export const multiplyMatrix = (matrix: number[][], λ: number) => {
+export const multiplyMatrix = (matrix: number[][], λ: number, precision: number = 3) => {
 	if (!isNumber(λ)) return undefined;
-	return matrix.map((row) => row.map((element) => element * λ));
+	return matrix.map((row) => row.map((element) => Number((element * λ).toPrecision(precision))));
 };
 
 /**

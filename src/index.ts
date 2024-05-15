@@ -23,6 +23,7 @@ import {
 } from './Helpers/index';
 import cofactorMatrix from './Matrix/cofactor';
 import determinant from './Matrix/determinant';
+import matrixInverse from './Matrix/inverse';
 import matrix_product from './Matrix/matrix_product';
 import matrix_sum from './Matrix/matrix_sum';
 import transpose from './Matrix/transpose';
@@ -41,6 +42,7 @@ const EM = {
 		rank,
 		determinant,
 		cofactorMatrix,
+		inverse: matrixInverse,
 		mutations: {
 			swapRow,
 			swapCol,
