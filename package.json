@@ -14,7 +14,6 @@
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
-    "js",
     "math",
     "probability",
     "algebra",
@@ -26,7 +25,8 @@
     "combination",
     "permutation",
     "determinant",
-    "transpose"
+    "transpose",
+    "typescript"
   ],
   "author": "Mout Pessemier",
   "license": "ISC",

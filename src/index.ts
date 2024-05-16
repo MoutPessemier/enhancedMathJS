@@ -76,3 +76,37 @@ const EM = {
 };
 
 export default EM;
+
+export {
+	bisection,
+	discriminator,
+	intersection_points,
+	factorial,
+	fibonacci,
+	generateIdentityMatrix,
+	generateZeroMatrix,
+	swapCol,
+	swapElement,
+	swapRow,
+	multiplyMatrix,
+	multiplyRow,
+	multiplyCol,
+	rank,
+	getDimensions,
+	isFraction,
+	isNumber,
+	containsStringValues,
+	isSquareMatrix,
+	fillEmptyRows,
+	getHighestRowLength,
+	getMatrixMinor,
+	cofactorMatrix,
+	determinant,
+	matrixInverse,
+	matrix_product,
+	matrix_sum,
+	transpose,
+	combination,
+	permutation,
+	stemleafplot,
+};
