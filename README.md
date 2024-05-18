@@ -136,6 +136,12 @@ Mout Pessemier:
 - [Twitter](https://twitter.com/MoutPessemier)
 - [LinkedIn](https://www.linkedin.com/in/moutpessemier/)
 
+#### Buy me a coffee
+
+If you like this package, consider buying me a coffee. It will help me to keep this package up to date and create new packages.
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/moutpessemier)
+
 ### Contributors
 
 - [reeveng](https://github.com/reeveng)
