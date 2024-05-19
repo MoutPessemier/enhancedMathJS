@@ -1,6 +1,6 @@
 # Enhanced Math
 
-This package contain some enhanced mathematical operations:
+This package contains some enhanced mathematical operations:
 
 - Algebra
   - [Bisection](https://github.com/MoutPessemier/enhancedMathJS/blob/master/src/Algebra/bisection.ts)
