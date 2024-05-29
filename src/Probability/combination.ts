@@ -1,5 +1,3 @@
-import BigNumber from 'bignumber.js';
-
 import factorial from '../factorial';
 
 /**
@@ -8,10 +6,11 @@ import factorial from '../factorial';
  * @param {number} r The sample size
  * @returns {number} The amount of possible combinations
  */
-const combination = (n: number, r: number): BigNumber | undefined => {
+const combination = (n: number, r: number) => {
 	if (0 <= r && r <= n) {
-		if (factorial(n) && factorial(r) && factorial(n - r))
-			return new BigNumber(factorial(n)!.dividedBy(factorial(r)!.multipliedBy(factorial(n - r)!)));
+		if (factorial(n) && factorial(r) && factorial(n - r)) {
+			return factorial(n)! / (factorial(r)! * factorial(n - r)!);
+		}
 		return undefined;
 	}
 	return undefined;

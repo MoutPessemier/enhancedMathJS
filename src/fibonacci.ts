@@ -1,5 +1,3 @@
-import BigNumber from 'bignumber.js';
-
 import { isNumber, isFraction } from './Helpers/index';
 
 /**
@@ -7,19 +5,21 @@ import { isNumber, isFraction } from './Helpers/index';
  * @param {number} index The position of the number in the row of Fibonnaci
  * @returns {number} The value of the row of Fibonnaci
  */
-const fibonacci = (index: number): BigNumber | undefined => {
+const fibonacci = (index: number) => {
 	if (index < 0 || !isNumber(index) || isFraction(index)) return undefined;
-	if (index < 2) new BigNumber(1);
-	let temp = new BigNumber(0);
-	let a = new BigNumber(1);
-	let b = new BigNumber(0);
+	if (index < 2) {
+		BigInt(1);
+	}
+	let temp = BigInt(0);
+	let a = BigInt(1);
+	let b = BigInt(0);
 	while (index >= 0) {
 		temp = a;
-		a = a.plus(b);
+		a += b;
 		b = temp;
 		index--;
 	}
-	return b;
+	return b.valueOf();
 };
 
 export default fibonacci;

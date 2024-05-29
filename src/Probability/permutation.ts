@@ -1,5 +1,3 @@
-import BigNumber from 'bignumber.js';
-
 import factorial from '../factorial';
 
 /**
@@ -7,14 +5,14 @@ import factorial from '../factorial';
  * @param n The total population
  * @param r The sample size
  */
-const permutation = (n: number, r: number): BigNumber | undefined => {
+const permutation = (n: number, r: number) => {
 	if (0 > r || r > n) {
 		return undefined;
 	}
 	if (!factorial(n) || !factorial(r) || !factorial(n - r)) {
 		return undefined;
 	}
-	return new BigNumber(factorial(n)!.dividedBy(factorial(n - r)!));
+	return factorial(n)! / factorial(n - r)!;
 };
 
 export default permutation;
