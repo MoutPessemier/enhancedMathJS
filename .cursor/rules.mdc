@@ -1,0 +1,65 @@
+---
+description: Writing general code
+globs: *.ts
+alwaysApply: true
+---
+# Cursor Rules for enhancedMathJS
+
+## Project Structure
+
+- `src/`: Main source code directory
+  - `Algebra/`: Algebraic functions (bisection, discriminator)
+  - `Helpers/`: Utility functions for matrix operations and type checking
+  - `Matrix/`: Matrix operations (determinant, inverse, transpose, etc.)
+  - `Probability/`: Probability-related functions (combination, permutation)
+  - `__tests__/`: Test files
+  - `factorial.ts`: Factorial function
+  - `fibonacci.ts`: Fibonacci sequence function
+  - `index.ts`: Main export file
+
+## Coding Standards
+
+### Naming Conventions
+
+- Use camelCase for variable and function names
+- Use PascalCase for class names
+- Use snake_case for file names when appropriate (e.g., `matrix_sum.ts`)
+- Use descriptive names that clearly indicate purpose
+
+### TypeScript
+
+- Use TypeScript generics where appropriate for type flexibility
+- Provide explicit return types for functions
+- Use proper TypeScript interfaces for complex data structures
+- Use optional parameters with default values when appropriate
+
+### Documentation
+
+- Document all functions with JSDoc comments
+- Include parameter descriptions and return value descriptions
+- Document edge cases and limitations
+
+### Code Organization
+
+- Group related functions together
+- Export all functions from the main index.ts file
+- Use named exports for individual functions
+- Use default export for the main EM object
+
+### Error Handling
+
+- Return `undefined` for invalid inputs rather than throwing errors
+- Check input validity at the beginning of functions
+- Handle edge cases explicitly
+
+### Matrix Operations
+
+- Always check matrix dimensions before performing operations
+- Handle special cases (zero determinant, non-square matrices)
+- Ensure consistent handling of -0 values (convert to 0)
+
+## Testing
+
+- Write tests for all new functionality
+- Ensure tests cover edge cases
+- Use vitest for testing

@@ -20,7 +20,6 @@ const matrixInverse = (matrix: number[][]) => {
 	}
 
 	const cofactor = cofactorMatrix(matrix)!;
-	// TODO: Clean this up
 	const adjointMatrix = transpose<number>(cofactor) as number[][];
 
 	return multiplyMatrix(adjointMatrix, 1 / det);
