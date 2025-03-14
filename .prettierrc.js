@@ -1,16 +1,16 @@
 /**
  * @type {import('prettier').Config}
  */
-module.exports = {
-	arrowParens: "always",
+export default {
+	arrowParens: 'always',
 	singleQuote: true,
 	jsxBracketSameLine: true,
-	parser: "typescript",
+	parser: 'typescript',
 	printWidth: 120,
 	useTabs: true,
 	tabWidth: 2,
 	semi: true,
-	trailingComma: "all",
+	trailingComma: 'all',
 	bracketSpacing: true,
-	endOfLine: "lf"
-}
+	endOfLine: 'lf',
+};
