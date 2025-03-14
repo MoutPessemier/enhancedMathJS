@@ -1,8 +1,8 @@
-import { getDimensions, multiplyMatrix } from '../Helpers/index';
+import { getDimensions, multiplyMatrix } from '../Helpers/index.js';
 
-import cofactorMatrix from './cofactor';
-import determinant from './determinant';
-import transpose from './transpose';
+import cofactorMatrix from './cofactor.js';
+import determinant from './determinant.js';
+import transpose from './transpose.js';
 
 /**
  * Calculates the inverse of a given matrix

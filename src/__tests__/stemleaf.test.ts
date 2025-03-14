@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import stemleafplot from '../Probability/stemleafplot';
+import stemleafplot from '../Probability/stemleafplot.js';
 
 describe('Stem and Leaf plot', () => {
 	test('data should be presented correctly in stem and leaf plot', () => {

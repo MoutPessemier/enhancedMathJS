@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import transpose from '../Matrix/transpose';
+import transpose from '../Matrix/transpose.js';
 
 describe('transpose', () => {
 	test('should return the same element for a 1x1 matrix', () => {

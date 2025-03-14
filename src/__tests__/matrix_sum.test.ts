@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import matrix_sum from '../Matrix/matrix_sum';
+import matrix_sum from '../Matrix/matrix_sum.js';
 
 describe('Matrix: Sum', () => {
 	test("should return undefined if dimensions aren't the same", () => {

@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import inverse from '../Matrix/inverse';
+import inverse from '../Matrix/inverse.js';
 
 describe('Matrix Inverse', () => {
 	test('should return undefined for non-square matrix', () => {

@@ -1,4 +1,4 @@
-import { getDimensions } from '../Helpers/index';
+import { getDimensions } from '../Helpers/index.js';
 
 /**
  * Calculates the matrix product of 2 matrices

@@ -1,4 +1,4 @@
-import { isNumber, isFraction } from './Helpers/index';
+import { isNumber, isFraction } from './Helpers/index.js';
 
 /**
  * Calculates the value of the row of Fibonnaci

@@ -1,4 +1,4 @@
-import { fillEmptyRows, getHighestRowLength } from '../Helpers';
+import { fillEmptyRows, getHighestRowLength } from '../Helpers/index.js';
 
 /**
  * Returns the transposed matrix

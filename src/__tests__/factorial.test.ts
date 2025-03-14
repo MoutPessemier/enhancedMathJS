@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import factorial from '../factorial';
+import factorial from '../factorial.js';
 
 describe('Factorial', () => {
 	test('should return 1 for 0', () => {

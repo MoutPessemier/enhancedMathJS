@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import combination from '../Probability/combination';
+import combination from '../Probability/combination.js';
 
 describe('Combination', () => {
 	test('should return 1 for a 1C1', () => {

@@ -14,7 +14,7 @@ import {
 	rank,
 	getDimensions,
 	getMatrixMinor,
-} from '../Helpers';
+} from '../Helpers/index.js';
 
 describe('Helper functions', () => {
 	test('square matrix should return true', () => {

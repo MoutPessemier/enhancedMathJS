@@ -1,7 +1,7 @@
-import bisection from './Algebra/bisection';
-import discriminator, { intersection_points } from './Algebra/discriminator';
-import factorial from './factorial';
-import fibonacci from './fibonacci';
+import bisection from './Algebra/bisection.js';
+import discriminator, { intersection_points } from './Algebra/discriminator.js';
+import factorial from './factorial.js';
+import fibonacci from './fibonacci.js';
 import {
 	generateIdentityMatrix,
 	generateZeroMatrix,
@@ -20,16 +20,16 @@ import {
 	fillEmptyRows,
 	getHighestRowLength,
 	getMatrixMinor,
-} from './Helpers/index';
-import cofactorMatrix from './Matrix/cofactor';
-import determinant from './Matrix/determinant';
-import matrixInverse from './Matrix/inverse';
-import matrix_product from './Matrix/matrix_product';
-import matrix_sum from './Matrix/matrix_sum';
-import transpose from './Matrix/transpose';
-import combination from './Probability/combination';
-import permutation from './Probability/permutation';
-import stemleafplot from './Probability/stemleafplot';
+} from './Helpers/index.js';
+import cofactorMatrix from './Matrix/cofactor.js';
+import determinant from './Matrix/determinant.js';
+import matrixInverse from './Matrix/inverse.js';
+import matrix_product from './Matrix/matrix_product.js';
+import matrix_sum from './Matrix/matrix_sum.js';
+import transpose from './Matrix/transpose.js';
+import combination from './Probability/combination.js';
+import permutation from './Probability/permutation.js';
+import stemleafplot from './Probability/stemleafplot.js';
 
 const EM = {
 	factorial,

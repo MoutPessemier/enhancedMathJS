@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import determinant from '../Matrix/determinant';
+import determinant from '../Matrix/determinant.js';
 
 describe('Matrix Determinant', () => {
 	test('should return the only value in a 1x1 matrix', () => {

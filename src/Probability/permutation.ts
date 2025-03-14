@@ -1,4 +1,4 @@
-import factorial from '../factorial';
+import factorial from '../factorial.js';
 
 /**
  * Calculates the probability of a permutation with a population of n and a sample size r

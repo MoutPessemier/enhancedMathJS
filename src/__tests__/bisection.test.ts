@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import bisection from '../Algebra/bisection';
+import bisection from '../Algebra/bisection.js';
 
 describe('bisection', () => {
 	test('should return 0 as intersection point for f(x) = x', () => {

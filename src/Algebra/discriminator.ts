@@ -1,4 +1,4 @@
-import { isNumber } from '../Helpers';
+import { isNumber } from '../Helpers/index.js';
 
 /**
  * Calculates the discriminator of a second degree equation

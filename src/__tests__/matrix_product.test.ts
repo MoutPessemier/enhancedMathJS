@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import matrix_product from '../Matrix/matrix_product';
+import matrix_product from '../Matrix/matrix_product.js';
 
 describe('Matrix: Product', () => {
 	test("should return undefined if dimensions aren't lining up", () => {

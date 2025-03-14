@@ -1,6 +1,6 @@
 import { test, describe, expect } from 'vitest';
 
-import cofactorMatrix from '../Matrix/cofactor';
+import cofactorMatrix from '../Matrix/cofactor.js';
 
 describe('Matrix Co-factor', () => {
 	test('should return correct cofactor matrix for 2x2 matrix', () => {

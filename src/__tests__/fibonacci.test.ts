@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import fibonacci from '../fibonacci';
+import fibonacci from '../fibonacci.js';
 
 describe('Fibonacci', () => {
 	test('should return 1 for 0', () => {

@@ -1,4 +1,4 @@
-import { getDimensions } from '../Helpers/index';
+import { getDimensions } from '../Helpers/index.js';
 /**
  * Adds matrix A and B together
  * @param A Matrix A

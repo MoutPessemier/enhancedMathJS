@@ -1,6 +1,6 @@
-import { getDimensions, getMatrixMinor } from '../Helpers/index';
+import { getDimensions, getMatrixMinor } from '../Helpers/index.js';
 
-import determinant from './determinant';
+import determinant from './determinant.js';
 
 /**
  * Calculates the co-factor matrix of a given matrix

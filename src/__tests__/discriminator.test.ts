@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import discriminator, { intersection_points } from '../Algebra/discriminator';
+import discriminator, { intersection_points } from '../Algebra/discriminator.js';
 
 describe('Discriminator', () => {
 	test('should calculate the correct discriminator', () => {

@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
@@ -10,7 +10,7 @@ export default defineConfig({
 			exclude: ['**/node_modules/**'],
 			reporter: ['text', 'cobertura', 'html'],
 		},
-		reporters: ['junit', 'basic'],
+		reporters: ['junit', ['default', { summary: false }]],
 		environment: 'node',
 		globals: true,
 		outputFile: 'test/test-results.xml',
